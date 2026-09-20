@@ -60,7 +60,9 @@ export const fleetVehicles = [
     models: 'Thaco Meadow TB85S / Hyundai Global / Garden',
     capacity: '29 hành khách + 1 tài xế + 1 phụ xe/HDV',
     idealGroup: 'Phù hợp đoàn 12 - 25 khách + hành lý',
-    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/vehicles/xe-29-cho-ngoai.jpg',
+    interiorImage: '/images/vehicles/xe-29-cho-noi-that.png',
+    interiorImage2: '/images/vehicles/xe-29-cho-noi-that-2.png',
     tag: 'Chuyên leo đèo dốc Sapa - Hà Giang',
     description: 'Dòng xe 29 chỗ đời mới chuyên phục vụ tour tuyến Đông - Tây Bắc. Động cơ Weichai / Hyundai mạnh mẽ leo đèo êm ái, phanh ABS an toàn tuyệt đối, hệ thống bầu hơi giảm chấn triệt tiêu say xe.',
     features: [
@@ -81,7 +83,10 @@ export const fleetVehicles = [
     models: 'Hyundai Universe Prime / Thaco Bluesky 120S',
     capacity: '45 hành khách + 1 tài xế + 1 phụ xe + 1 HDV',
     idealGroup: 'Phù hợp đoàn 28 - 43 khách',
-    image: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/vehicles/xe-45-cho-ngoai.jpg',
+    interiorImage: '/images/vehicles/xe-45-cho-noi-that.jpg',
+    luggageImage: '/images/vehicles/xe-45-cho-cop-xe.jpg',
+    exteriorImage2: '/images/vehicles/xe-45-cho-ngoai-2.jpg',
     tag: 'Chuyên cơ mặt đất tiêu chuẩn 5 sao',
     description: 'Chuyên cơ mặt đất 45 chỗ đỉnh cao chuyên chạy cao tốc Hà Nội - Hải Phòng - Hạ Long, cao tốc Nội Bài - Lào Cai, cao tốc Hà Nội - Ninh Bình. Hầm hành lý thông suốt khổng lồ, sức chứa hơn 50 vali cỡ đại của đoàn tour quốc tế.',
     features: [
@@ -98,6 +103,18 @@ export const fleetVehicles = [
   },
 ];
 
+export const fleetGallery = [
+  { src: '/images/vehicles/doi-xe-1.jpg', title: 'Đội xe du lịch Đông Dương', desc: 'Dàn xe 29 & 45 chỗ đời mới sẵn sàng phục vụ' },
+  { src: '/images/vehicles/doi-xe-2.jpg', title: 'Bãi xe trung tâm Hà Nội', desc: 'Quy mô xe lớn, đáp ứng nhiều đoàn tour cùng lúc' },
+  { src: '/images/vehicles/xe-29-cho-ngoai.jpg', title: 'Ngoại thất xe 29 chỗ', desc: 'Thiết kế hiện đại, thon gọn, chuyên vượt đèo dốc' },
+  { src: '/images/vehicles/xe-29-cho-noi-that.png', title: 'Nội thất xe 29 chỗ', desc: 'Ghế Universe bọc da cao cấp, điều hòa mát sâu' },
+  { src: '/images/vehicles/xe-45-cho-ngoai.jpg', title: 'Ngoại thất xe 45 chỗ', desc: 'Chuyên cơ mặt đất Universe VIP sang trọng' },
+  { src: '/images/vehicles/xe-45-cho-noi-that.jpg', title: 'Nội thất xe 45 chỗ', desc: 'Khoang hành khách rộng rãi, ghế da thương gia' },
+  { src: '/images/vehicles/xe-45-cho-cop-xe.jpg', title: 'Hầm hành lý 45 chỗ', desc: 'Hầm thông suốt chứa hơn 50 vali cỡ đại của đoàn tour' },
+  { src: '/images/vehicles/tai-xe-nhiet-tinh.jpg', title: 'Đội ngũ bác tài nhiệt tình', desc: 'Tài xế chuyên nghiệp, lịch sự, phục vụ chu đáo' },
+  { src: '/images/vehicles/khach-hang-tuoi-cuoi.jpg', title: 'Khách hàng hài lòng', desc: 'Nụ cười rạng rỡ của du khách sau mỗi chuyến hành trình' },
+];
+
 export const popularRoutes = [
   {
     id: 'hanoi-city-noibai',
@@ -106,7 +123,7 @@ export const popularRoutes = [
     distance: 'Nội Bài 30km, City Tour linh hoạt',
     vehicleTypes: '29 Chỗ & 45 Chỗ',
     targetMarket: 'Tất cả: Pháp, Nhật, Thái, Hàn, Đài Loan, Sài Gòn',
-    image: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=800&q=80',
+    image: '/images/destinations/hanoi.jpg',
     highlights: [
       'Đón tiễn sân bay quốc tế Nội Bài 24/7 đúng giờ, biển đón chuyên nghiệp',
       'Tham quan Lăng Bác, Chùa Một Cột, Văn Miếu Quốc Tử Giám, Hồ Gươm',
@@ -121,7 +138,7 @@ export const popularRoutes = [
     distance: 'Khoảng 315km (Cao tốc Nội Bài - Lào Cai êm ái)',
     vehicleTypes: '29 Chỗ & 45 Chỗ (Bầu hơi chống say xe)',
     targetMarket: 'Rất chuộng: Thái Lan, Hàn Quốc, Đài Loan, Khách Sài Gòn',
-    image: 'https://images.unsplash.com/photo-1528127269322-539801943592?auto=format&fit=crop&w=800&q=80',
+    image: '/images/destinations/sapa.jpg',
     highlights: [
       'Di chuyển cao tốc Nội Bài - Lào Cai chỉ 4.5 - 5 giờ',
       'Chinh phục đỉnh Fansipan 3.143m bằng cáp treo kỷ lục',
@@ -136,7 +153,7 @@ export const popularRoutes = [
     distance: 'Khoảng 95km (Cao tốc Hà Nội - Ninh Bình chỉ 1.5h)',
     vehicleTypes: '29 Chỗ & 45 Chỗ',
     targetMarket: 'Đặc biệt yêu thích: Khách Pháp, Thái Lan, Nhật Bản, Đài Loan',
-    image: 'https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80',
+    image: '/images/destinations/ninh-binh.jpg',
     highlights: [
       'Quần thể danh thắng di sản thế giới Tràng An - Tam Cốc Bích Động',
       'Ngồi thuyền nan lướt qua các hang động karst đá vôi kỳ vĩ',
@@ -151,7 +168,7 @@ export const popularRoutes = [
     distance: 'Khoảng 160km (Cao tốc Hà Nội - Hải Phòng - Hạ Long chỉ 2h)',
     vehicleTypes: '29 Chỗ & 45 Chỗ',
     targetMarket: 'Tất cả: Pháp, Nhật, Hàn, Thái, Đài Loan, Sài Gòn',
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+    image: '/images/destinations/ha-long.jpg',
     highlights: [
       'Chạy trọn tuyến cao tốc hiện đại nhất Việt Nam chỉ hơn 2 giờ',
       'Đón trả tận bến cảng Tuần Châu / Cảng tàu quốc tế Hạ Long',
@@ -166,7 +183,7 @@ export const popularRoutes = [
     distance: 'Khoảng 300km - 450km (Tuyên Quang - Hà Giang)',
     vehicleTypes: 'Xe 29 Chỗ Chuyên Tuyến Vượt Đèo Núi',
     targetMarket: 'Khách Pháp, Đài Loan, Thái Lan, Khách Sài Gòn mê khám phá',
-    image: 'https://images.unsplash.com/photo-1509233725247-49e657c54213?auto=format&fit=crop&w=800&q=80',
+    image: '/images/destinations/ha-giang.jpg',
     highlights: [
       'Xe 29 chỗ đời mới động cơ khỏe, chuyên trị cung đèo Hà Giang',
       'Chinh phục đèo Mã Pí Lèng hiểm trở và hẻm vực Tu Sản - sông Nho Quế',
@@ -181,7 +198,7 @@ export const popularRoutes = [
     distance: 'Theo yêu cầu từng hành trình tour',
     vehicleTypes: '29 Chỗ & 45 Chỗ',
     targetMarket: 'Đoàn khách quốc tế Inbound & Tour lữ hành nội địa',
-    image: 'https://images.unsplash.com/photo-1546548970-71785318a17b?auto=format&fit=crop&w=800&q=80',
+    image: '/images/destinations/cao-bang.jpg',
     highlights: [
       'Đảo Cát Bà & Vịnh Lan Hạ qua cầu vượt biển Tân Vũ Hải Phòng',
       'Thung lũng Mai Châu mộc mạc - Bản Lác văn hóa dân tộc Thái',

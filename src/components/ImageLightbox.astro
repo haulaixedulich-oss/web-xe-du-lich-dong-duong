@@ -1,0 +1,244 @@
+---
+// Reusable Lightbox modal for zooming images
+---
+
+<div
+  id="image-lightbox-modal"
+  class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300 bg-black/95 backdrop-blur-md flex items-center justify-center p-3 sm:p-6"
+  role="dialog"
+  aria-modal="true"
+  aria-label="Xem ảnh phóng to"
+>
+  <!-- Background click area to close -->
+  <div id="lightbox-backdrop" class="absolute inset-0 cursor-pointer"></div>
+
+  <!-- Top bar controls -->
+  <div class="absolute top-4 right-4 z-20 flex items-center gap-3">
+    <span id="lightbox-counter" class="text-xs text-white/70 font-medium px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm hidden sm:inline-block"></span>
+    <button
+      id="lightbox-close-btn"
+      class="w-10 h-10 rounded-full bg-white/15 hover:bg-red-600 text-white flex items-center justify-center transition-all duration-200 cursor-pointer shadow-lg hover:scale-105"
+      title="Đóng (ESC)"
+      aria-label="Đóng"
+    >
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Navigation Prev Button -->
+  <button
+    id="lightbox-prev-btn"
+    class="absolute left-2 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition-all duration-200 cursor-pointer backdrop-blur-sm shadow-xl hover:scale-110 active:scale-95"
+    title="Ảnh trước (Mũi tên trái)"
+    aria-label="Ảnh trước"
+  >
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7"></path>
+    </svg>
+  </button>
+
+  <!-- Navigation Next Button -->
+  <button
+    id="lightbox-next-btn"
+    class="absolute right-2 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/15 hover:bg-white/30 text-white flex items-center justify-center transition-all duration-200 cursor-pointer backdrop-blur-sm shadow-xl hover:scale-110 active:scale-95"
+    title="Ảnh tiếp theo (Mũi tên phải)"
+    aria-label="Ảnh tiếp theo"
+  >
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+    </svg>
+  </button>
+
+  <!-- Main Image Container -->
+  <div class="relative z-10 max-w-full max-h-full flex flex-col items-center justify-center select-none pointer-events-none">
+    <div class="relative pointer-events-auto">
+      <img
+        id="lightbox-img"
+        src=""
+        alt=""
+        class="max-h-[82vh] max-w-[92vw] object-contain rounded-xl shadow-2xl transition-all duration-300 scale-95 opacity-0"
+      />
+      <div id="lightbox-loading" class="absolute inset-0 flex items-center justify-center">
+        <div class="w-10 h-10 border-4 border-white/20 border-t-red-600 rounded-full animate-spin"></div>
+      </div>
+    </div>
+    <div class="mt-3 text-center pointer-events-auto">
+      <p id="lightbox-caption" class="text-xs sm:text-sm text-white/95 font-medium px-4 py-1.5 rounded-full bg-black/60 backdrop-blur-md inline-block max-w-[85vw] truncate shadow"></p>
+    </div>
+  </div>
+</div>
+
+<style is:global>
+  .zoomable-image,
+  [data-zoomable] {
+    cursor: zoom-in !important;
+  }
+</style>
+
+<script>
+  interface LightboxItem {
+    src: string;
+    alt: string;
+    caption: string;
+  }
+
+  let imagesList: LightboxItem[] = [];
+  let currentIndex = 0;
+
+  const modal = document.getElementById('image-lightbox-modal');
+  const modalImg = document.getElementById('lightbox-img') as HTMLImageElement | null;
+  const captionEl = document.getElementById('lightbox-caption');
+  const counterEl = document.getElementById('lightbox-counter');
+  const loadingEl = document.getElementById('lightbox-loading');
+  const closeBtn = document.getElementById('lightbox-close-btn');
+  const prevBtn = document.getElementById('lightbox-prev-btn');
+  const nextBtn = document.getElementById('lightbox-next-btn');
+  const backdrop = document.getElementById('lightbox-backdrop');
+
+  function openLightbox(index: number) {
+    if (!imagesList.length || index < 0 || index >= imagesList.length || !modal) return;
+    currentIndex = index;
+    updateLightbox();
+
+    modal.classList.remove('hidden');
+    requestAnimationFrame(() => {
+      if (modal) {
+        modal.classList.remove('opacity-0');
+      }
+      document.body.style.overflow = 'hidden';
+    });
+  }
+
+  function closeLightbox() {
+    if (!modal) return;
+    modal.classList.add('opacity-0');
+    setTimeout(() => {
+      if (modal) modal.classList.add('hidden');
+      document.body.style.overflow = '';
+      if (modalImg) modalImg.src = '';
+    }, 250);
+  }
+
+  function updateLightbox() {
+    const item = imagesList[currentIndex];
+    if (!item || !modalImg || !captionEl || !counterEl) return;
+
+    if (loadingEl) loadingEl.classList.remove('hidden');
+    modalImg.classList.add('opacity-0', 'scale-95');
+
+    const temp = new Image();
+    temp.src = item.src;
+    temp.onload = () => {
+      if (!modalImg) return;
+      modalImg.src = item.src;
+      modalImg.alt = item.alt || '';
+      if (loadingEl) loadingEl.classList.add('hidden');
+      modalImg.classList.remove('opacity-0', 'scale-95');
+      modalImg.classList.add('scale-100', 'opacity-100');
+    };
+
+    captionEl.textContent = item.caption || item.alt || 'Ảnh phóng to Đông Dương Travel';
+    counterEl.textContent = `${currentIndex + 1} / ${imagesList.length}`;
+
+    if (prevBtn && nextBtn) {
+      if (imagesList.length <= 1) {
+        prevBtn.classList.add('hidden');
+        nextBtn.classList.add('hidden');
+      } else {
+        prevBtn.classList.remove('hidden');
+        nextBtn.classList.remove('hidden');
+      }
+    }
+  }
+
+  function prevImage() {
+    if (!imagesList.length) return;
+    currentIndex = (currentIndex - 1 + imagesList.length) % imagesList.length;
+    updateLightbox();
+  }
+
+  function nextImage() {
+    if (!imagesList.length) return;
+    currentIndex = (currentIndex + 1) % imagesList.length;
+    updateLightbox();
+  }
+
+  function initZoomableImages() {
+    const selectors = [
+      'img[data-zoomable]',
+      '.zoomable-image',
+      '#xe-29-cho img',
+      '#xe-45-cho img',
+      'section img[src*="/images/vehicles/"]',
+      'section img[src*="/images/destinations/"]'
+    ];
+
+    const elements = Array.from(document.querySelectorAll<HTMLImageElement>(selectors.join(',')))
+      .filter((img) => !img.src.includes('logo.png') && !img.src.includes('favicon'));
+
+    const uniqueElements: HTMLImageElement[] = [];
+    const seenSrcs = new Set<string>();
+
+    elements.forEach((img) => {
+      if (!seenSrcs.has(img.src)) {
+        seenSrcs.add(img.src);
+        uniqueElements.push(img);
+      }
+    });
+
+    imagesList = uniqueElements.map((img) => ({
+      src: img.getAttribute('data-zoom-src') || img.src,
+      alt: img.alt || '',
+      caption: img.getAttribute('data-caption') || img.alt || ''
+    }));
+
+    uniqueElements.forEach((img, idx) => {
+      img.classList.add('zoomable-image');
+      img.title = img.title || 'Nhấp để phóng to ảnh';
+      img.addEventListener('click', (e) => {
+        e.preventDefault();
+        openLightbox(idx);
+      });
+    });
+  }
+
+  // Event Listeners
+  closeBtn?.addEventListener('click', closeLightbox);
+  backdrop?.addEventListener('click', closeLightbox);
+  prevBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    prevImage();
+  });
+  nextBtn?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    nextImage();
+  });
+
+  window.addEventListener('keydown', (e) => {
+    if (modal?.classList.contains('hidden')) return;
+    if (e.key === 'Escape') closeLightbox();
+    else if (e.key === 'ArrowLeft') prevImage();
+    else if (e.key === 'ArrowRight') nextImage();
+  });
+
+  // Touch Swipe for Mobile
+  let touchStartX = 0;
+  modal?.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+  }, { passive: true });
+
+  modal?.addEventListener('touchend', (e) => {
+    const touchEndX = e.changedTouches[0].screenX;
+    const diff = touchEndX - touchStartX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) prevImage();
+      else nextImage();
+    }
+  }, { passive: true });
+
+  // Init on load & Astro page swap
+  document.addEventListener('DOMContentLoaded', initZoomableImages);
+  document.addEventListener('astro:page-load', initZoomableImages);
+</script>

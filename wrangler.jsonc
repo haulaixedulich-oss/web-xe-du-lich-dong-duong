@@ -1,0 +1,27 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "web-xe-du-lich-dong-duong",
+  "compatibility_date": "2024-09-23",
+  "pages_build_output_dir": "dist",
+
+  /**
+   * Cấu hình D1 Database đã tạo:
+   */
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "xedongduong_db",
+      "database_id": "5a0f6cfb-5100-44e3-8db3-0708b0d15dad"
+    }
+  ],
+
+  /**
+   * Cấu hình R2 Storage Bucket:
+   */
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "xedongduong-media"
+    }
+  ]
+}

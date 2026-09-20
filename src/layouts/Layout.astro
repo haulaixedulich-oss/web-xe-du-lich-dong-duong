@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import FloatingWidgets from '../components/FloatingWidgets.astro';
+import ImageLightbox from '../components/ImageLightbox.astro';
 import { siteInfo } from '../data/siteData.js';
 
 interface Props {
@@ -55,5 +56,6 @@ const canonicalURL = new URL(currentPath, 'https://xedongduong.com');
 
     <Footer />
     <FloatingWidgets />
+    <ImageLightbox />
   </body>
 </html>

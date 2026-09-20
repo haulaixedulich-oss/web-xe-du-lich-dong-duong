@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import QuoteForm from '../components/QuoteForm.astro';
-import { siteInfo, fleetVehicles } from '../data/siteData.js';
+import { siteInfo, fleetVehicles, fleetGallery } from '../data/siteData.js';
 ---
 
 <Layout
@@ -32,23 +32,46 @@ import { siteInfo, fleetVehicles } from '../data/siteData.js';
       <div id="xe-29-cho" class="bg-white rounded-3xl shadow-xl border border-slate-200/80 overflow-hidden">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           
-          <div class="lg:col-span-6 relative h-80 sm:h-96 lg:h-full min-h-[350px]">
-            <img
-              src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80"
-              alt="Xe du lịch 29 chỗ Đông Dương Travel"
-              class="w-full h-full object-cover"
-            />
-            <div class="absolute top-4 left-4">
-              <span class="bg-red-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase">
-                Chuyên Leo Đèo Dốc Sapa - Hà Giang
-              </span>
-            </div>
-            <div class="absolute bottom-4 left-4 right-4 bg-slate-950/80 backdrop-blur-md p-3.5 rounded-xl border border-white/10 text-white text-xs flex justify-between items-center">
-              <div>
-                <span class="text-amber-300 font-bold block">Hệ Thống Bầu Hơi Giảm Chấn</span>
-                <span class="text-slate-300">Triệt tiêu rung lắc, chống say xe cho khách tour</span>
+          <div class="lg:col-span-6 space-y-3">
+            <div class="relative h-72 sm:h-80 w-full rounded-2xl overflow-hidden shadow">
+              <img
+                src="/images/vehicles/xe-29-cho-ngoai.jpg"
+                alt="Ngoại thất xe du lịch 29 chỗ Đông Dương Travel"
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute top-4 left-4">
+                <span class="bg-red-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase">
+                  Chuyên Leo Đèo Dốc Sapa - Hà Giang
+                </span>
               </div>
-              <span class="bg-red-700 px-2.5 py-1 rounded font-black text-xs">Đời Mới</span>
+              <div class="absolute bottom-3 left-3 right-3 bg-slate-950/80 backdrop-blur-md p-3 rounded-xl border border-white/10 text-white text-xs flex justify-between items-center">
+                <div>
+                  <span class="text-amber-300 font-bold block">Hệ Thống Bầu Hơi Giảm Chấn</span>
+                  <span class="text-slate-300 text-[11px]">Triệt tiêu rung lắc, chống say xe cho khách tour</span>
+                </div>
+                <span class="bg-red-700 px-2 py-0.5 rounded font-black text-xs">Đời Mới</span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div class="relative h-28 sm:h-32 rounded-xl overflow-hidden border border-slate-200 shadow-sm group">
+                <img
+                  src="/images/vehicles/xe-29-cho-noi-that.png"
+                  alt="Nội thất xe 29 chỗ Đông Dương Travel"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                <span class="absolute bottom-2 left-2 text-xs font-bold text-white drop-shadow">Nội thất ghế Universe bọc da</span>
+              </div>
+              <div class="relative h-28 sm:h-32 rounded-xl overflow-hidden border border-slate-200 shadow-sm group">
+                <img
+                  src="/images/vehicles/xe-29-cho-noi-that-2.png"
+                  alt="Khoang hành khách xe 29 chỗ Đông Dương Travel"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                <span class="absolute bottom-2 left-2 text-xs font-bold text-white drop-shadow">Cửa gió điều hòa từng ghế</span>
+              </div>
             </div>
           </div>
 
@@ -229,23 +252,55 @@ import { siteInfo, fleetVehicles } from '../data/siteData.js';
 
           </div>
 
-          <div class="lg:col-span-6 relative h-80 sm:h-96 lg:h-full min-h-[350px] order-1 lg:order-2">
-            <img
-              src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&q=80"
-              alt="Xe du lịch 45 chỗ Universe VIP Đông Dương"
-              class="w-full h-full object-cover"
-            />
-            <div class="absolute top-4 right-4">
-              <span class="bg-red-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase">
-                Chuyên Cơ Mặt Đất 5 Sao
-              </span>
-            </div>
-            <div class="absolute bottom-4 left-4 right-4 bg-slate-950/80 backdrop-blur-md p-3.5 rounded-xl border border-white/10 text-white text-xs flex justify-between items-center">
-              <div>
-                <span class="text-amber-300 font-bold block">Hầm Thông Suốt Cực Đại</span>
-                <span class="text-slate-300">Chứa thoải mái 50 - 60 vali cỡ đại của đoàn tour</span>
+          <div class="lg:col-span-6 space-y-3 order-1 lg:order-2">
+            <div class="relative h-72 sm:h-80 w-full rounded-2xl overflow-hidden shadow">
+              <img
+                src="/images/vehicles/xe-45-cho-ngoai.jpg"
+                alt="Ngoại thất xe du lịch 45 chỗ Universe VIP Đông Dương"
+                class="w-full h-full object-cover"
+              />
+              <div class="absolute top-4 right-4">
+                <span class="bg-red-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase">
+                  Chuyên Cơ Mặt Đất 5 Sao
+                </span>
               </div>
-              <span class="bg-amber-500 text-slate-950 px-2.5 py-1 rounded font-black text-xs">VIP 45 Chỗ</span>
+              <div class="absolute bottom-3 left-3 right-3 bg-slate-950/80 backdrop-blur-md p-3 rounded-xl border border-white/10 text-white text-xs flex justify-between items-center">
+                <div>
+                  <span class="text-amber-300 font-bold block">Hầm Thông Suốt Cực Đại</span>
+                  <span class="text-slate-300 text-[11px]">Chứa thoải mái 50 - 60 vali cỡ đại của đoàn tour</span>
+                </div>
+                <span class="bg-amber-500 text-slate-950 px-2.5 py-1 rounded font-black text-xs">VIP 45 Chỗ</span>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-2.5">
+              <div class="relative h-24 sm:h-28 rounded-xl overflow-hidden border border-slate-200 shadow-sm group">
+                <img
+                  src="/images/vehicles/xe-45-cho-noi-that.jpg"
+                  alt="Nội thất xe 45 chỗ Universe"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                <span class="absolute bottom-1.5 left-1.5 text-[11px] font-bold text-white drop-shadow">Nội thất VIP</span>
+              </div>
+              <div class="relative h-24 sm:h-28 rounded-xl overflow-hidden border border-slate-200 shadow-sm group">
+                <img
+                  src="/images/vehicles/xe-45-cho-cop-xe.jpg"
+                  alt="Cốp hầm hành lý xe 45 chỗ"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                <span class="absolute bottom-1.5 left-1.5 text-[11px] font-bold text-white drop-shadow">Hầm 50+ vali</span>
+              </div>
+              <div class="relative h-24 sm:h-28 rounded-xl overflow-hidden border border-slate-200 shadow-sm group">
+                <img
+                  src="/images/vehicles/xe-45-cho-ngoai-2.jpg"
+                  alt="Xe 45 chỗ thực tế tại bãi"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+                <span class="absolute bottom-1.5 left-1.5 text-[11px] font-bold text-white drop-shadow">Dàn xe thực tế</span>
+              </div>
             </div>
           </div>
 
@@ -305,6 +360,43 @@ import { siteInfo, fleetVehicles } from '../data/siteData.js';
               </tr>
             </tbody>
           </table>
+        </div>
+      </div>
+
+      <!-- BỘ SƯU TẬP HÌNH ẢNH THỰC TẾ -->
+      <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-lg border border-slate-200">
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <div class="inline-block bg-red-100 text-red-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-2">
+            100% Ảnh Chụp Thực Tế
+          </div>
+          <h3 class="text-xl sm:text-3xl font-black text-slate-900">
+            Hình Ảnh Hoạt Động & Đội Xe Đông Dương
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-500 mt-2">
+            Minh bạch phương tiện, cam kết đúng chủng loại xe khi ký hợp đồng phục vụ đoàn tour.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+          {fleetGallery.map((item) => (
+            <div class="group relative rounded-2xl overflow-hidden border border-slate-200 bg-slate-100 shadow-sm hover:shadow-md transition-all">
+              <div class="h-48 sm:h-56 w-full overflow-hidden">
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
+              <div class="p-3 bg-white">
+                <h4 class="font-bold text-xs sm:text-sm text-slate-900 group-hover:text-red-700 transition-colors">
+                  {item.title}
+                </h4>
+                <p class="text-[11px] text-slate-500 mt-0.5 line-clamp-1">
+                  {item.desc}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
