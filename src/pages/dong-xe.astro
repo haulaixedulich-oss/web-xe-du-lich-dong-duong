@@ -1,0 +1,319 @@
+---
+import Layout from '../layouts/Layout.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import { siteInfo, fleetVehicles } from '../data/siteData.js';
+---
+
+<Layout
+  title="Các Dòng Xe Du Lịch 29 Chỗ & 45 Chỗ Đời Mới - Nhà Xe Đông Dương"
+  description="Chi tiết đội xe 29 chỗ và 45 chỗ cao cấp đời mới của Đông Dương Travel. Xe trang bị bầu hơi êm ái, máy lạnh sâu, khoang hành lý lớn chuyên chạy tuyến phía Bắc: Hà Nội, Sapa, Ninh Bình, Hạ Long, Hà Giang."
+  currentPath="/dong-xe"
+>
+  <section class="relative bg-gradient-to-r from-red-950 via-red-900 to-slate-900 text-white py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-800/80 border border-red-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider mb-3">
+          Đội Xe Du Lịch Đời Mới 2024 - 2026
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+          Dòng Xe Du Lịch <span class="text-amber-300">29 Chỗ & 45 Chỗ</span>
+        </h1>
+        <p class="text-base sm:text-lg text-slate-200 mt-3 leading-relaxed">
+          Toàn bộ đội xe Nhà xe Đông Dương đều là dòng xe đời mới chất lượng cao, trang bị hệ thống giảm chấn bầu hơi êm ái, khoang hành lý rộng rãi, chuyên phục vụ các đoàn khách quốc tế và các tuyến đèo dốc phía Bắc.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
+      <!-- XE 29 CHỖ -->
+      <div id="xe-29-cho" class="bg-white rounded-3xl shadow-xl border border-slate-200/80 overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-6 relative h-80 sm:h-96 lg:h-full min-h-[350px]">
+            <img
+              src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80"
+              alt="Xe du lịch 29 chỗ Đông Dương Travel"
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute top-4 left-4">
+              <span class="bg-red-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase">
+                Chuyên Leo Đèo Dốc Sapa - Hà Giang
+              </span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 bg-slate-950/80 backdrop-blur-md p-3.5 rounded-xl border border-white/10 text-white text-xs flex justify-between items-center">
+              <div>
+                <span class="text-amber-300 font-bold block">Hệ Thống Bầu Hơi Giảm Chấn</span>
+                <span class="text-slate-300">Triệt tiêu rung lắc, chống say xe cho khách tour</span>
+              </div>
+              <span class="bg-red-700 px-2.5 py-1 rounded font-black text-xs">Đời Mới</span>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 p-6 sm:p-8 lg:p-10 space-y-6">
+            <div>
+              <span class="text-xs font-bold text-red-600 uppercase tracking-wider block mb-1">
+                Thaco Meadow TB85S • Hyundai Global • Thaco Garden
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                Xe Du Lịch 29 Chỗ Cao Cấp
+              </h2>
+              <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                Dòng xe 29 chỗ là sự lựa chọn số 1 cho các đoàn tour từ 12 đến 25 khách. Thiết kế thon gọn nhưng động cơ cực khỏe, dễ dàng di chuyển trên các cung đường đèo dốc uốn lượn tại Sapa, Hà Giang, Mộc Châu, Mai Châu cũng như len lỏi thuận tiện trong phố cổ Hà Nội.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 text-xs sm:text-sm font-semibold text-slate-700 bg-red-50/60 p-4 rounded-2xl border border-red-100">
+              <div>
+                <span class="text-slate-400 block text-xs font-normal">Sức chứa tiêu chuẩn:</span>
+                <span class="text-slate-900 font-bold">29 hành khách + 1 HDV + 1 Lái xe</span>
+              </div>
+              <div>
+                <span class="text-slate-400 block text-xs font-normal">Quy mô đoàn tối ưu:</span>
+                <span class="text-red-700 font-bold">12 - 25 người + Hành lý</span>
+              </div>
+              <div>
+                <span class="text-slate-400 block text-xs font-normal">Khoang hành lý:</span>
+                <span class="text-slate-900 font-bold">4 khoang hông rộng (25-30 vali)</span>
+              </div>
+              <div>
+                <span class="text-slate-400 block text-xs font-normal">Hệ thống treo:</span>
+                <span class="text-slate-900 font-bold">Bầu hơi khí nén êm ái</span>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <h3 class="text-xs font-bold text-slate-900 uppercase tracking-wider">
+                Trang Bị & Tiện Nghi Chuẩn Tour Quốc Tế:
+              </h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-700">
+                <div class="flex items-center gap-2">
+                  <span class="text-red-600 font-bold">✓</span>
+                  <span>Ghế bọc da ngả lưng sâu êm ái</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-red-600 font-bold">✓</span>
+                  <span>Điều hòa 2 dàn lạnh sâu, không mùi</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-red-600 font-bold">✓</span>
+                  <span>Micro không dây & âm thanh chuẩn HDV</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-red-600 font-bold">✓</span>
+                  <span>Màn hình TV LCD giải trí sắc nét</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-red-600 font-bold">✓</span>
+                  <span>Cổng sạc USB từng hàng ghế tiện lợi</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-red-600 font-bold">✓</span>
+                  <span>Tủ lạnh mini giữ nước suối luôn mát lạnh</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3.5 bg-slate-100 rounded-xl text-xs text-slate-700">
+              <strong class="text-red-700">Thế mạnh tuyến:</strong> Đón tiễn Nội Bài, City Tour Phố Cổ, Hà Nội - Sapa, Hà Nội - Hà Giang (Đồng Văn, Mèo Vạc), Mai Châu, Mộc Châu, Ninh Bình.
+            </div>
+
+            <div class="pt-2 flex flex-wrap gap-3">
+              <a
+                href="/lien-he"
+                class="bg-red-600 hover:bg-red-700 text-white font-bold text-sm px-6 py-3 rounded-xl shadow-luxury transition-all"
+              >
+                Báo Giá Thuê Xe 29 Chỗ
+              </a>
+              <a
+                href={siteInfo.hotlineFormatted}
+                class="bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm px-6 py-3 rounded-xl transition-all"
+              >
+                Gọi: {siteInfo.hotline}
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- XE 45 CHỖ -->
+      <div id="xe-45-cho" class="bg-white rounded-3xl shadow-xl border border-slate-200/80 overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          
+          <div class="lg:col-span-6 p-6 sm:p-8 lg:p-10 space-y-6 order-2 lg:order-1">
+            <div>
+              <span class="text-xs font-bold text-red-600 uppercase tracking-wider block mb-1">
+                Hyundai Universe Prime • Thaco Bluesky 120S
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+                Xe Du Lịch 45 Chỗ Universe VIP
+              </h2>
+              <p class="text-sm text-slate-600 mt-2 leading-relaxed">
+                Được mệnh danh là "chuyên cơ mặt đất", xe 45 chỗ Universe là đỉnh cao cho các đoàn du lịch quốc tế lớn, tour MICE công ty và các tuyến tour chạy cao tốc miền Bắc. Hầm hành lý thông suốt khổng lồ giải quyết triệt để vấn đề hành lý cồng kềnh của đoàn du khách.
+              </p>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3 text-xs sm:text-sm font-semibold text-slate-700 bg-red-50/60 p-4 rounded-2xl border border-red-100">
+              <div>
+                <span class="text-slate-400 block text-xs font-normal">Sức chứa tiêu chuẩn:</span>
+                <span class="text-slate-900 font-bold">45 hành khách + 1 HDV + 1 Phụ + 1 Lái</span>
+              </div>
+              <div>
+                <span class="text-slate-400 block text-xs font-normal">Quy mô đoàn tối ưu:</span>
+                <span class="text-red-700 font-bold">28 - 43 người + Toàn bộ vali</span>
+              </div>
+              <div>
+                <span class="text-slate-400 block text-xs font-normal">Cốp hành lý hầm hàng:</span>
+                <span class="text-slate-900 font-bold">Hầm thông suốt chứa 50-60 vali cỡ đại</span>
+              </div>
+              <div>
+                <span class="text-slate-400 block text-xs font-normal">Hệ thống giảm xóc:</span>
+                <span class="text-slate-900 font-bold">6 bầu hơi khí nén lướt êm ái</span>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <h3 class="text-xs font-bold text-slate-900 uppercase tracking-wider">
+                Tiện Nghi Thương Gia Đẳng Cấp:
+              </h3>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-700">
+                <div class="flex items-center gap-2">
+                  <span class="text-red-600 font-bold">✓</span>
+                  <span>Ghế Universe thương gia ngả sâu êm ái</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-red-600 font-bold">✓</span>
+                  <span>Máy lạnh công suất lớn làm mát tức thì</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-red-600 font-bold">✓</span>
+                  <span>Hệ thống âm thanh Hi-Fi & màn hình LCD 32 inch</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-red-600 font-bold">✓</span>
+                  <span>Đèn trần LED chuyển màu không gian sang trọng</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-red-600 font-bold">✓</span>
+                  <span>Tủ lạnh chuyên dụng bảo quản khăn lạnh & nước</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-red-600 font-bold">✓</span>
+                  <span>Phanh điện từ & ABS an toàn tối đa trên cao tốc</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3.5 bg-slate-100 rounded-xl text-xs text-slate-700">
+              <strong class="text-red-700">Thế mạnh tuyến:</strong> Cao tốc Hà Nội - Hải Phòng - Hạ Long, Hà Nội - Ninh Bình, Hà Nội - Lào Cai - Sapa, tour MICE Cát Bà, FLC Hạ Long, Flamingo Đại Lải.
+            </div>
+
+            <div class="pt-2 flex flex-wrap gap-3">
+              <a
+                href="/lien-he"
+                class="bg-red-600 hover:bg-red-700 text-white font-bold text-sm px-6 py-3 rounded-xl shadow-luxury transition-all"
+              >
+                Báo Giá Thuê Xe 45 Chỗ
+              </a>
+              <a
+                href={siteInfo.hotlineFormatted}
+                class="bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm px-6 py-3 rounded-xl transition-all"
+              >
+                Gọi: {siteInfo.hotline}
+              </a>
+            </div>
+
+          </div>
+
+          <div class="lg:col-span-6 relative h-80 sm:h-96 lg:h-full min-h-[350px] order-1 lg:order-2">
+            <img
+              src="https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=1200&q=80"
+              alt="Xe du lịch 45 chỗ Universe VIP Đông Dương"
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute top-4 right-4">
+              <span class="bg-red-600 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow-md uppercase">
+                Chuyên Cơ Mặt Đất 5 Sao
+              </span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4 bg-slate-950/80 backdrop-blur-md p-3.5 rounded-xl border border-white/10 text-white text-xs flex justify-between items-center">
+              <div>
+                <span class="text-amber-300 font-bold block">Hầm Thông Suốt Cực Đại</span>
+                <span class="text-slate-300">Chứa thoải mái 50 - 60 vali cỡ đại của đoàn tour</span>
+              </div>
+              <span class="bg-amber-500 text-slate-950 px-2.5 py-1 rounded font-black text-xs">VIP 45 Chỗ</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- BẢNG SO SÁNH -->
+      <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-lg border border-slate-200">
+        <div class="text-center max-w-2xl mx-auto mb-8">
+          <h3 class="text-xl sm:text-2xl font-black text-slate-900">
+            Bảng So Sánh Tiêu Chuẩn Giữa Xe 29 Chỗ & 45 Chỗ
+          </h3>
+          <p class="text-xs sm:text-sm text-slate-500 mt-1">
+            Giúp quý công ty lữ hành và quý khách dễ dàng lựa chọn phương tiện tối ưu theo lịch trình và quy mô đoàn.
+          </p>
+        </div>
+
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs sm:text-sm border-collapse">
+            <thead>
+              <tr class="border-b-2 border-slate-200 bg-slate-50">
+                <th class="p-4 font-bold text-slate-700">Tiêu Chí Đánh Giá</th>
+                <th class="p-4 font-bold text-red-700 bg-red-50/50">Dòng Xe 29 Chỗ Cao Cấp</th>
+                <th class="p-4 font-bold text-red-800 bg-red-100/50">Dòng Xe 45 Chỗ Universe VIP</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-100">
+              <tr>
+                <td class="p-4 font-semibold text-slate-800">Số lượng khách tối ưu</td>
+                <td class="p-4 text-slate-600 bg-red-50/20">12 - 25 hành khách</td>
+                <td class="p-4 text-slate-600 bg-red-100/20">28 - 43 hành khách</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold text-slate-800">Khả năng chứa vali hành lý</td>
+                <td class="p-4 text-slate-600 bg-red-50/20">Khoảng 25 - 30 vali cỡ lớn</td>
+                <td class="p-4 text-slate-600 bg-red-100/20">Khoảng 50 - 60 vali cỡ đại (hầm thông)</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold text-slate-800">Đặc tính vận hành</td>
+                <td class="p-4 text-slate-600 bg-red-50/20">Linh hoạt, vượt dốc đèo hiểm trở Sapa, Hà Giang cực tốt</td>
+                <td class="p-4 text-slate-600 bg-red-100/20">Lướt êm ái trên cao tốc, không gian khoáng đạt rộng rãi</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold text-slate-800">Hệ thống giảm xóc</td>
+                <td class="p-4 text-slate-600 bg-red-50/20">Hệ thống bầu hơi êm ái</td>
+                <td class="p-4 text-slate-600 bg-red-100/20">Hệ thống 6 bầu hơi khí nén cao cấp</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold text-slate-800">Tiện ích phục vụ</td>
+                <td class="p-4 text-slate-600 bg-red-50/20">Ghế ngả, TV LCD, Micro HDV, Tủ lạnh mini, USB</td>
+                <td class="p-4 text-slate-600 bg-red-100/20">Ghế VIP ngả sâu, TV 32", Âm thanh Hi-Fi, Tủ lạnh lớn, Đèn trần LED</td>
+              </tr>
+              <tr>
+                <td class="p-4 font-semibold text-slate-800">Tuyến đường khuyên dùng</td>
+                <td class="p-4 text-slate-600 bg-red-50/20">Nội Bài, Phố Cổ, Sapa, Hà Giang, Mộc Châu, Mai Châu, Ninh Bình</td>
+                <td class="p-4 text-slate-600 bg-red-100/20">Hà Nội - Hạ Long, Sapa, Ninh Bình, Hải Phòng, tour MICE quy mô lớn</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="py-16 bg-white border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <QuoteForm />
+    </div>
+  </section>
+</Layout>

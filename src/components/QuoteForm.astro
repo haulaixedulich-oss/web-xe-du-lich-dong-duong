@@ -1,0 +1,180 @@
+---
+import { popularRoutes } from '../data/siteData.js';
+
+interface Props {
+  isCompact?: boolean;
+}
+
+const { isCompact = false } = Astro.props;
+---
+
+<div class="bg-white rounded-2xl shadow-xl border border-red-100 p-6 sm:p-8 relative overflow-hidden">
+  <!-- Accent top bar -->
+  <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-red-700 via-red-600 to-amber-500"></div>
+
+  <div class="mb-6">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-50 text-red-700 text-xs font-bold uppercase tracking-wider mb-2">
+      <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
+      Phản Hồi & Báo Giá Trong 15 Phút
+    </div>
+    <h3 class="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
+      Yêu Cầu Báo Giá Xe 29 - 45 Chỗ Tuyến Phía Bắc
+    </h3>
+    <p class="text-sm text-slate-600 mt-1">
+      Dành cho đối tác công ty lữ hành và quý khách đoàn du lịch, công tác, sự kiện.
+    </p>
+  </div>
+
+  <form id="quote-booking-form" class="space-y-4">
+    <!-- Phân loại khách / đối tác -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div>
+        <label class="block text-xs font-bold text-slate-800 uppercase mb-1">
+          Bạn Là: <span class="text-red-600">*</span>
+        </label>
+        <select
+          name="customer_type"
+          required
+          class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-red-600 focus:ring-2 focus:ring-red-100 text-sm font-bold text-slate-900 bg-white transition-all shadow-sm"
+        >
+          <option value="travel_agency" class="text-slate-900 bg-white font-bold py-2">🏢 Công Ty Du Lịch / Đại Lý Lữ Hành (B2B)</option>
+          <option value="tour_leader" class="text-slate-900 bg-white font-bold py-2">🚩 Hướng Dẫn Viên / Trưởng Đoàn Quốc Tế</option>
+          <option value="direct_customer" class="text-slate-900 bg-white font-bold py-2">👥 Khách Đoàn Trực Tiếp / Doanh Nghiệp</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="block text-xs font-bold text-slate-800 uppercase mb-1">
+          Dòng Xe Yêu Cầu: <span class="text-red-600">*</span>
+        </label>
+        <select
+          name="vehicle_type"
+          required
+          class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-red-600 focus:ring-2 focus:ring-red-100 text-sm font-bold text-slate-900 bg-white transition-all shadow-sm"
+        >
+          <option value="29_seats" class="text-slate-900 bg-white font-bold py-2">Xe 29 Chỗ Cao Cấp (Đoàn 12 - 25 khách)</option>
+          <option value="45_seats" class="text-slate-900 bg-white font-bold py-2">Xe 45 Chỗ Universe VIP (Đoàn 28 - 43 khách)</option>
+          <option value="both" class="text-slate-900 bg-white font-bold py-2">Cần Cả Xe 29 Chỗ & 45 Chỗ</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Tuyến đường & Điểm đến -->
+    <div>
+      <label class="block text-xs font-bold text-slate-800 uppercase mb-1">
+        Tuyến Tour Phía Bắc / Lịch Trình: <span class="text-red-600">*</span>
+      </label>
+      <select
+        name="route_selection"
+        class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-red-600 focus:ring-2 focus:ring-red-100 text-sm font-bold text-slate-900 bg-white transition-all shadow-sm"
+      >
+        <option value="noibai_hanoi" class="text-slate-900 bg-white font-bold py-2">✈️ Đón Tiễn Sân Bay Nội Bài & Hà Nội City Tour</option>
+        <option value="hanoi_sapa" class="text-slate-900 bg-white font-bold py-2">🏔️ Hà Nội - Sapa - Fansipan (2N1Đ / 3N2Đ)</option>
+        <option value="hanoi_ninhbinh" class="text-slate-900 bg-white font-bold py-2">🚣 Hà Nội - Ninh Bình (Tràng An - Tam Cốc - Bái Đính)</option>
+        <option value="hanoi_halong" class="text-slate-900 bg-white font-bold py-2">⛵ Hà Nội - Vịnh Hạ Long / Cảng Tàu Quốc Tế</option>
+        <option value="hanoi_hagiang" class="text-slate-900 bg-white font-bold py-2">⛰️ Hà Nội - Hà Giang - Đèo Mã Pí Lèng - Đồng Văn</option>
+        <option value="hanoi_catba_mai_chau" class="text-slate-900 bg-white font-bold py-2">🏞️ Tuyến Phía Bắc Khác (Cát Bà, Mai Châu, Mộc Châu, Cao Bằng...)</option>
+        <option value="custom" class="text-slate-900 bg-white font-bold py-2">✏️ Lịch trình riêng theo yêu cầu của đoàn</option>
+      </select>
+    </div>
+
+    <!-- Ngày khởi hành & Số lượng ngày -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div>
+        <label class="block text-xs font-bold text-slate-800 uppercase mb-1">
+          Ngày Khởi Hành Dự Kiến:
+        </label>
+        <input
+          type="date"
+          name="start_date"
+          class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-red-600 focus:ring-2 focus:ring-red-100 text-sm font-medium text-slate-900 bg-white transition-all shadow-sm"
+        />
+      </div>
+      <div>
+        <label class="block text-xs font-bold text-slate-800 uppercase mb-1">
+          Thời Lượng Tour / Số Ngày:
+        </label>
+        <input
+          type="text"
+          name="duration"
+          placeholder="Ví dụ: 1 ngày, 3 ngày 2 đêm..."
+          class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-red-600 focus:ring-2 focus:ring-red-100 text-sm font-medium text-slate-900 bg-white transition-all shadow-sm"
+        />
+      </div>
+    </div>
+
+    <!-- Thông tin liên hệ -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+      <div>
+        <label class="block text-xs font-bold text-slate-800 uppercase mb-1">
+          Họ Tên / Tên Đơn Vị Lữ Hành: <span class="text-red-600">*</span>
+        </label>
+        <input
+          type="text"
+          name="contact_name"
+          required
+          placeholder="Ví dụ: Anh Minh (Công ty Du Lịch ABC)"
+          class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-red-600 focus:ring-2 focus:ring-red-100 text-sm font-medium text-slate-900 bg-white transition-all shadow-sm"
+        />
+      </div>
+      <div>
+        <label class="block text-xs font-bold text-slate-800 uppercase mb-1">
+          Số Điện Thoại / Zalo: <span class="text-red-600">*</span>
+        </label>
+        <input
+          type="tel"
+          name="phone_number"
+          required
+          placeholder="Ví dụ: 0908xxxxxx"
+          class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-red-600 focus:ring-2 focus:ring-red-100 text-sm font-medium text-slate-900 bg-white transition-all shadow-sm"
+        />
+      </div>
+    </div>
+
+    <!-- Ghi chú thêm -->
+    <div>
+      <label class="block text-xs font-bold text-slate-800 uppercase mb-1">
+        Ghi Chú Yêu Cầu Đặc Biệt (Quốc tịch đoàn khách, điểm đón trả...):
+      </label>
+      <textarea
+        name="special_requests"
+        rows="2"
+        placeholder="Ví dụ: Đoàn 20 khách Thái Lan cần tài xế nhiệt tình, nhiều hành lý to, đón tại sân bay Nội Bài..."
+        class="w-full px-3.5 py-2 rounded-xl border border-slate-300 focus:border-red-600 focus:ring-2 focus:ring-red-100 text-sm font-medium text-slate-900 bg-white transition-all shadow-sm"
+      ></textarea>
+    </div>
+
+    <!-- Nút Gửi -->
+    <div class="pt-2">
+      <button
+        type="submit"
+        class="w-full bg-gradient-to-r from-red-700 via-red-600 to-red-700 hover:from-red-800 hover:to-red-800 text-white font-bold py-3.5 px-6 rounded-xl shadow-luxury hover:shadow-luxury-lg transform hover:-translate-y-0.5 transition-all text-sm sm:text-base flex items-center justify-center gap-2 cursor-pointer"
+      >
+        <svg class="w-5 h-5 text-amber-300 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+        </svg>
+        <span class="whitespace-nowrap">GỬI YÊU CẦU BÁO GIÁ ĐỐI TÁC</span>
+      </button>
+    </div>
+
+    <!-- Message Success -->
+    <div id="quote-success-msg" class="hidden p-4 bg-emerald-50 border border-emerald-200 rounded-xl text-emerald-800 text-sm text-center font-bold animate-fadeIn">
+      ✓ Cảm ơn Quý khách & Quý đối tác! Nhà xe Đông Dương đã tiếp nhận thông tin và sẽ liên hệ báo giá ưu đãi qua Số điện thoại / Zalo trong ít phút.
+    </div>
+
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById('quote-booking-form');
+  const successMsg = document.getElementById('quote-success-msg');
+
+  if (form && successMsg) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      successMsg.classList.remove('hidden');
+      form.reset();
+      successMsg.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+  }
+</script>

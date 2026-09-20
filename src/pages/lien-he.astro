@@ -1,0 +1,205 @@
+---
+import Layout from '../layouts/Layout.astro';
+import QuoteForm from '../components/QuoteForm.astro';
+import { siteInfo } from '../data/siteData.js';
+
+const faqs = [
+  {
+    q: 'Nhà xe Đông Dương có ký hợp đồng nguyên tắc B2B và xuất hóa đơn VAT điện tử không?',
+    a: 'Có đầy đủ 100%. Chúng tôi có tư cách pháp nhân doanh nghiệp vận tải hợp pháp, xuất hóa đơn VAT điện tử nhanh chóng ngay sau khi kết thúc tour và hỗ trợ hợp đồng nguyên tắc hàng năm với mức chiết khấu đại lý tốt nhất cho các công ty lữ hành.',
+  },
+  {
+    q: 'Tài xế của nhà xe có kinh nghiệm phục vụ khách quốc tế (Thái, Pháp, Nhật, Hàn, Đài Loan) không?',
+    a: 'Toàn bộ đội ngũ tài xế của Đông Dương Travel đều có từ 5-15 năm thâm niên chuyên chạy tour du lịch quốc tế và các đoàn khách từ Sài Gòn ra Bắc. Tài xế có tác phong lịch thiệp, chu đáo, kiên nhẫn, luôn giữ xe sạch bóng không khói thuốc và đúng giờ tuyệt đối theo lịch trình của Hướng dẫn viên.',
+  },
+  {
+    q: 'Phương án xử lý khẩn cấp nếu xe gặp sự cố kỹ thuật trên đường tour đèo núi miền Bắc?',
+    a: 'Chúng tôi sở hữu mạng lưới liên minh nhà xe du lịch 29 và 45 chỗ rộng khắp các tỉnh phía Bắc (Hà Nội, Lào Cai, Hạ Long, Ninh Bình, Hà Giang). Trong mọi tình huống phát sinh, đội điều vận sẽ kích hoạt phương án đổi xe tương đương trong thời gian ngắn nhất để không làm gián đoạn lịch trình tour của Quý công ty.',
+  },
+  {
+    q: 'Nhà xe có phục vụ đón tiễn các chuyến bay đêm hoặc sáng sớm tại Sân bay Nội Bài không?',
+    a: 'Chúng tôi phục vụ 24/7 mọi khung giờ. Tài xế túc trực đúng giờ tại sảnh đến ga quốc nội (T1) và ga quốc tế (T2) Sân bay Nội Bài với biển đón tên đoàn chuyên nghiệp, hỗ trợ bốc xếp toàn bộ hành lý lên cốp xe an toàn.',
+  },
+];
+---
+
+<Layout
+  title="Liên Hệ & Hợp Tác Đối Tác Lữ Hành - Nhà Xe Đông Dương"
+  description="Thông tin liên hệ Nhà xe Đông Dương (xedongduong.com) - Hotline 24/7, bãi xe Hà Nội, Zalo, WhatsApp. Gửi yêu cầu báo giá xe 29 và 45 chỗ cho tour miền Bắc hoặc kết nối đối tác lữ hành B2B."
+  currentPath="/lien-he"
+>
+  <section class="relative bg-gradient-to-r from-red-950 via-red-900 to-slate-900 text-white py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-800/80 border border-red-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider mb-3">
+          Kết Nối Đối Tác Lữ Hành & Khách Đoàn
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
+          Liên Hệ & <span class="text-amber-300">Báo Giá Nhanh</span>
+        </h1>
+        <p class="text-base sm:text-lg text-slate-200 mt-3 leading-relaxed">
+          Nhà xe Đông Dương rất hân hạnh được kết nối cùng Quý công ty lữ hành Inbound & Outbound, các đại lý tour và quý khách đoàn. Chúng tôi cam kết phản hồi báo giá ưu đãi nhất chỉ trong 15 phút.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <div class="lg:col-span-6 space-y-8">
+          
+          <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-md border border-slate-200 space-y-6">
+            <div class="flex items-center gap-4 pb-4 border-b border-slate-100">
+              <div class="w-16 h-16 bg-white p-1 rounded-xl shadow border border-red-100 flex items-center justify-center flex-shrink-0">
+                <img src="/images/logo.png" alt="Logo Đông Dương Travel" class="w-full h-full object-contain" />
+              </div>
+              <div>
+                <h2 class="text-xl font-black text-red-700 uppercase tracking-tight">
+                  Đông Dương Travel
+                </h2>
+                <span class="text-xs font-bold text-slate-700 block">
+                  Hãng Xe Du Lịch 29 Chỗ & 45 Chỗ Tuyến Phía Bắc
+                </span>
+                <span class="text-xs text-amber-600 font-semibold">
+                  Tên miền chính thức: xedongduong.com
+                </span>
+              </div>
+            </div>
+
+            <ul class="space-y-4 text-sm">
+              <li class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-red-100 text-red-700 flex items-center justify-center flex-shrink-0 font-bold">
+                  📞
+                </div>
+                <div>
+                  <span class="text-xs text-slate-500 block font-medium">Hotline Báo Giá 24/7 (Có Zalo):</span>
+                  <a href={siteInfo.hotlineFormatted} class="text-xl font-black text-red-700 hover:text-red-800">
+                    {siteInfo.hotline}
+                  </a>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center flex-shrink-0 font-bold">
+                  💬
+                </div>
+                <div>
+                  <span class="text-xs text-slate-500 block font-medium">Kênh Chat Hỗ Trợ Quốc Tế & Đối Tác:</span>
+                  <div class="flex items-center gap-3 mt-1">
+                    <a href={siteInfo.zalo} target="_blank" rel="noopener" class="bg-blue-600 text-white text-xs px-3 py-1 rounded font-bold hover:bg-blue-700 transition-colors">
+                      Zalo Official
+                    </a>
+                    <a href={siteInfo.whatsapp} target="_blank" rel="noopener" class="bg-emerald-600 text-white text-xs px-3 py-1 rounded font-bold hover:bg-emerald-700 transition-colors">
+                      WhatsApp Inbound
+                    </a>
+                  </div>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center flex-shrink-0 font-bold">
+                  📍
+                </div>
+                <div>
+                  <span class="text-xs text-slate-500 block font-medium">Bãi Xe Trung Tâm & Đón Tiễn:</span>
+                  <span class="font-semibold text-slate-800 text-xs sm:text-sm">
+                    {siteInfo.garageAddress}
+                  </span>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center flex-shrink-0 font-bold">
+                  🏢
+                </div>
+                <div>
+                  <span class="text-xs text-slate-500 block font-medium">Văn Phòng Kết Nối Lữ Hành:</span>
+                  <span class="font-semibold text-slate-800 text-xs sm:text-sm">
+                    {siteInfo.address}
+                  </span>
+                </div>
+              </li>
+
+              <li class="flex items-start gap-3">
+                <div class="w-8 h-8 rounded-lg bg-slate-100 text-slate-700 flex items-center justify-center flex-shrink-0 font-bold">
+                  ✉️
+                </div>
+                <div>
+                  <span class="text-xs text-slate-500 block font-medium">Email Tiếp Nhận Hồ Sơ Lữ Hành & Tour:</span>
+                  <a href={"mailto:" + siteInfo.email} class="font-semibold text-red-700 hover:underline text-xs sm:text-sm">
+                    {siteInfo.email}
+                  </a>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="bg-gradient-to-br from-red-900 to-red-950 rounded-3xl p-6 sm:p-8 text-white space-y-4 shadow-xl border border-red-800">
+            <div class="flex items-center gap-2">
+              <span class="text-amber-400 text-lg">🤝</span>
+              <h3 class="text-lg font-black text-amber-300 uppercase tracking-tight">
+                Chính Sách Đặc Quyền Dành Cho Đối Tác Lữ Hành
+              </h3>
+            </div>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Chúng tôi luôn xem các Công ty Lữ hành là đối tác chiến lược lâu dài. Khi hợp tác cùng Đông Dương Travel, quý đơn vị được cam kết:
+            </p>
+            <ul class="space-y-2 text-xs sm:text-sm text-slate-200">
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold">✓</span>
+                <span>Bảo lưu bảng giá đại lý cố định, chiết khấu hoa hồng hấp dẫn.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold">✓</span>
+                <span>Ưu tiên giữ xe vào các mùa cao điểm du lịch phía Bắc (Xuân, Hè, Thu).</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold">✓</span>
+                <span>Chính sách công nợ linh hoạt theo hợp đồng nguyên tắc lữ hành.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-amber-400 font-bold">✓</span>
+                <span>Đội xe dự phòng 24/7 giải quyết mọi phát sinh khẩn cấp.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="lg:col-span-6">
+          <QuoteForm />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white border-t border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <span class="text-xs font-bold text-red-700 uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full border border-red-200 inline-block mb-2">
+          Giải Đáp Thắc Mắc
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-black text-slate-900">
+          Câu Hỏi Thường Gặp Khi Thuê Xe Tại Đông Dương Travel
+        </h2>
+      </div>
+
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 hover:border-red-300 transition-colors">
+            <h3 class="text-sm sm:text-base font-bold text-slate-900 flex items-start gap-2.5">
+              <span class="text-red-600 font-black text-lg leading-none">Q:</span>
+              <span>{faq.q}</span>
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-600 mt-2 pl-6 leading-relaxed">
+              {faq.a}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</Layout>

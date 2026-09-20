@@ -1,0 +1,59 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWidgets from '../components/FloatingWidgets.astro';
+import { siteInfo } from '../data/siteData.js';
+
+interface Props {
+  title?: string;
+  description?: string;
+  currentPath?: string;
+}
+
+const {
+  title = `${siteInfo.name} - Cho Thuê Xe Du Lịch 29 Chỗ & 45 Chỗ Tuyến Phía Bắc`,
+  description = 'Nhà xe Đông Dương (xedongduong.com) - Chuyên cho thuê xe du lịch 29 chỗ và 45 chỗ đời mới chạy tuyến phía Bắc: Hà Nội, Sapa, Ninh Bình, Hạ Long, Hà Giang... Chuyên phục vụ đoàn khách Thái Lan, Pháp, Nhật Bản, Hàn Quốc, Đài Loan, Sài Gòn và kết nối đối tác lữ hành.',
+  currentPath = '/',
+} = Astro.props;
+
+const canonicalURL = new URL(currentPath, 'https://xedongduong.com');
+---
+
+<!doctype html>
+<html lang="vi" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/images/logo.png" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Primary -->
+    <title>{title}</title>
+    <meta name="title" content={title} />
+    <meta name="description" content={description} />
+    <meta name="keywords" content="nhà xe đông dương, xe đông dương, xedongduong.com, thuê xe 29 chỗ hà nội, thuê xe 45 chỗ hà nội, thuê xe đi sapa, thuê xe đi hạ long, thuê xe đi ninh bình, thuê xe đi hà giang, xe du lịch cho khách thái lan, xe tour pháp nhật hàn đài loan, cho thuê xe lữ hành phía bắc" />
+    <link rel="canonical" href={canonicalURL} />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content="/images/logo.png" />
+
+    <!-- Google Font Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  </head>
+  <body class="min-h-screen flex flex-col bg-slate-50 text-slate-800 antialiased selection:bg-red-600 selection:text-white">
+    <Header currentPath={currentPath} />
+    
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <Footer />
+    <FloatingWidgets />
+  </body>
+</html>
