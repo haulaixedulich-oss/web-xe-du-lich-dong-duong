@@ -8,7 +8,7 @@ export const siteInfo = {
   hotlineFormatted: 'tel:0369078889',
   zalo: 'https://zalo.me/0369078889',
   whatsapp: 'https://wa.me/84369078889',
-  email: 'haulaixedulich@gmail.com',
+  email: 'info@xedongduong.com',
   address: 'Hà Nội & Văn phòng kết nối: TP. Hồ Chí Minh (Sài Gòn)',
   garageAddress: 'Bãi xe trung tâm: Hà Nội (Gần Sân Bay Nội Bài & Cửa ngõ Cao tốc phía Bắc)',
   operatingHours: 'Phục vụ 24/7 đón tiễn sân bay Nội Bài & tour miền Bắc',
