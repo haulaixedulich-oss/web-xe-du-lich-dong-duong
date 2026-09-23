@@ -1,172 +1,369 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import QuoteForm from '../components/QuoteForm.astro';
-import { siteInfo, popularRoutes } from '../data/siteData.js';
+import { siteInfo, featuredCustomerRoutes, popularRoutes } from '../data/siteData.js';
 ---
 
 <Layout
-  title="Các Tuyến Du Lịch Phía Bắc - Nhà Xe Đông Dương"
-  description="Danh sách các tuyến tour du lịch miền Bắc trọng điểm: Hà Nội City, Sân bay Nội Bài, Sapa Fansipan, Ninh Bình Tràng An, Vịnh Hạ Long, Hà Giang Mã Pí Lèng... Phục vụ chuyên nghiệp xe 29 và 45 chỗ."
+  title="Bảng Giá & Lịch Trình Các Tuyến Du Lịch Phía Bắc - Nhà Xe Đông Dương"
+  description="Bảng giá thuê xe du lịch 16 chỗ, 29 chỗ, 45 chỗ các tuyến tour khách đi nhiều nhất: Hà Giang 3N2Đ (14tr - 18tr), Mù Cang Chải 3N2Đ (9tr - 12tr), Hà Giang - Cao Bằng 5N4Đ (19tr - 25tr), Hà Giang - Sapa 5N4Đ (19tr - 25tr). Xe đời mới, trọn gói xăng dầu, tài xế chuyên nghiệp."
   currentPath="/tuyen-du-lich"
 >
-  <section class="relative bg-gradient-to-r from-red-950 via-red-900 to-slate-900 text-white py-16 sm:py-20">
+  <!-- Hero Section -->
+  <section class="relative bg-gradient-to-r from-red-950 via-red-900 to-slate-900 text-white py-16 sm:py-20 overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:16px_16px]"></div>
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-3xl">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-800/80 border border-red-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider mb-3">
-          Cung Đường Vàng Miền Bắc
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-red-800/80 border border-red-500/30 text-amber-300 text-xs font-bold uppercase tracking-wider mb-4 shadow">
+          <span>★</span> Bảng Giá Thực Tế & Lịch Trình Chi Tiết
         </div>
-        <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight">
-          Các Tuyến Du Lịch <span class="text-amber-300">Phía Bắc</span>
+        <h1 class="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+          Các Tuyến Du Lịch <span class="text-amber-300">Khách Đặt Nhiều Nhất</span>
         </h1>
-        <p class="text-base sm:text-lg text-slate-200 mt-3 leading-relaxed">
-          Nhà xe Đông Dương chuyên phục vụ các tuyến tour trọng điểm xuất phát từ Hà Nội và Sân bay Nội Bài đi các danh thắng phía Bắc. Tài xế thông thạo cung đường cao tốc và đèo dốc, thấu hiểu thói quen của đoàn khách quốc tế và khách Sài Gòn.
+        <p class="text-base sm:text-lg text-slate-200 mt-4 leading-relaxed">
+          Đông Dương Travel công khai bảng giá trọn gói xe 16 - 29 - 45 chỗ đời mới cho các tuyến tour trọng điểm Đông - Tây Bắc. Lịch trình tối ưu từng điểm check-in, ăn trưa và nghỉ đêm, phục vụ bởi đội ngũ bác tài chuyên đường đèo núi.
         </p>
+
+        <!-- Highlights Badges -->
+        <div class="mt-6 flex flex-wrap gap-3 text-xs sm:text-sm font-semibold">
+          <div class="flex items-center gap-2 bg-white/10 backdrop-blur px-3.5 py-1.5 rounded-lg border border-white/15">
+            <span class="text-emerald-400 font-bold">✓</span> Giá trọn gói xe, xăng dầu & cầu đường
+          </div>
+          <div class="flex items-center gap-2 bg-white/10 backdrop-blur px-3.5 py-1.5 rounded-lg border border-white/15">
+            <span class="text-emerald-400 font-bold">✓</span> Xe đời mới 100% giảm chấn bầu hơi êm ái
+          </div>
+          <div class="flex items-center gap-2 bg-white/10 backdrop-blur px-3.5 py-1.5 rounded-lg border border-white/15">
+            <span class="text-emerald-400 font-bold">✓</span> Tài xế nhiệt tình, thông thạo đường đèo
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="py-16 sm:py-20 bg-slate-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-      
-      {popularRoutes.map((route, idx) => (
-        <div class="bg-white rounded-3xl shadow-md hover:shadow-xl border border-slate-200/80 overflow-hidden transition-all duration-300">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
-            
-            <div class={idx % 2 === 1 ? 'lg:col-span-5 relative h-72 sm:h-80 lg:h-full min-h-[300px] lg:order-2' : 'lg:col-span-5 relative h-72 sm:h-80 lg:h-full min-h-[300px] lg:order-1'}>
-              <img
-                src={route.image}
-                alt={route.title}
-                class="w-full h-full object-cover"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
-              
-              <div class="absolute top-4 left-4">
-                <span class="bg-red-700 text-white text-xs font-bold px-3 py-1.5 rounded-full shadow">
+  <!-- BẢNG GIÁ TỔNG HỢP NHANH (QUICK PRICE SUMMARY) -->
+  <section class="py-10 bg-white border-b border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+        <div>
+          <span class="text-xs font-bold text-red-700 uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full border border-red-200 inline-block mb-1">
+            Minh Bạch Chi Phí
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
+            Bảng Giá Thuê Xe Các Cung Đường Hot
+          </h2>
+        </div>
+        <div class="text-xs text-slate-500 italic">
+          * Đã bao gồm toàn bộ xe, xăng dầu, vé cầu đường cao tốc & tài xế phục vụ suốt tour.
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+        {featuredCustomerRoutes.map((route) => (
+          <a
+            href={`#${route.id}`}
+            class="group bg-gradient-to-b from-slate-50 to-white hover:to-red-50/40 p-5 rounded-2xl border border-slate-200 hover:border-red-400 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-2">
+                <span class="text-[11px] font-black uppercase tracking-wider text-amber-700 bg-amber-100/80 px-2.5 py-0.5 rounded-md">
                   {route.duration}
                 </span>
+                <span class="text-[11px] text-slate-400 font-medium group-hover:text-red-600 transition-colors">
+                  Xem lịch trình ↓
+                </span>
               </div>
+              <h3 class="font-black text-slate-900 text-base group-hover:text-red-700 transition-colors line-clamp-1">
+                {route.title}
+              </h3>
+              <p class="text-xs text-slate-500 mt-1 line-clamp-1">
+                {route.tag}
+              </p>
 
-              <div class="absolute bottom-4 left-4 right-4 text-white text-xs">
-                <span class="text-amber-300 font-bold block">Khoảng cách di chuyển:</span>
-                <span>{route.distance}</span>
+              <div class="mt-4 pt-3 border-t border-slate-200/80 space-y-2">
+                {route.prices.map((p) => (
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="text-slate-600 font-medium">{p.vehicle}:</span>
+                    <span class={`font-black text-sm ${p.isPopular ? 'text-red-700 bg-red-50 px-2 py-0.5 rounded' : 'text-slate-900'}`}>
+                      {p.price}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div class={idx % 2 === 1 ? 'lg:col-span-7 p-6 sm:p-8 space-y-5 lg:order-1' : 'lg:col-span-7 p-6 sm:p-8 space-y-5 lg:order-2'}>
+            <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] font-bold text-red-600 group-hover:translate-x-1 transition-transform">
+              <span>Xem chi tiết lịch trình & giá</span>
+              <span>→</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CHI TIẾT 4 TUYẾN TOUR KHÁCH ĐẶT NHIỀU NHẤT KÈM LỊCH TRÌNH NGÀY -->
+  <section class="py-16 sm:py-20 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+      
+      <div class="text-center max-w-3xl mx-auto">
+        <span class="text-xs font-bold text-red-700 uppercase tracking-widest bg-red-100 px-3 py-1 rounded-full border border-red-200 inline-block mb-2">
+          Chi Tiết Điểm Đến & Lịch Trình
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
+          Lịch Trình Chi Tiết Từng Ngày & Bảng Giá Xe
+        </h2>
+        <p class="text-sm sm:text-base text-slate-600 mt-2">
+          Lộ trình được thiết kế chuẩn xác về thời gian di chuyển, các điểm dừng chân ăn trưa, ngắm cảnh và nghỉ đêm thuận tiện nhất cho khách đoàn và đối tác du lịch.
+        </p>
+      </div>
+
+      {featuredCustomerRoutes.map((route, rIdx) => (
+        <div
+          id={route.id}
+          class="scroll-mt-24 bg-white rounded-3xl shadow-xl border border-slate-200/90 overflow-hidden transition-all duration-300"
+        >
+          {/* Header Banner Tuyến */}
+          <div class="relative bg-slate-900 text-white overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
               
-              <div>
-                <div class="inline-block bg-red-100 text-red-800 text-xs font-bold px-2.5 py-1 rounded-md mb-2">
-                  ★ Khách chuộng: {route.targetMarket}
+              {/* Ảnh đại diện */}
+              <div class="lg:col-span-5 relative h-64 sm:h-80 lg:h-auto min-h-[280px]">
+                <img
+                  src={route.image}
+                  alt={route.title}
+                  class="w-full h-full object-cover"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
+                
+                <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+                  <span class="bg-red-700 text-white text-xs font-black px-3.5 py-1.5 rounded-full shadow-md uppercase tracking-wider">
+                    {route.duration}
+                  </span>
+                  <span class="bg-amber-500 text-slate-950 text-xs font-black px-3 py-1.5 rounded-full shadow-md">
+                    {route.tag}
+                  </span>
                 </div>
-                <h2 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">
-                  {route.title}
-                </h2>
+
+                <div class="absolute bottom-4 left-4 right-4 text-white text-xs">
+                  <div class="text-slate-300">Khoảng cách & địa hình:</div>
+                  <div class="font-bold text-amber-300 text-sm">{route.distance}</div>
+                </div>
               </div>
 
-              <div class="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
-                <span class="bg-slate-100 px-3 py-1 rounded-lg">
-                  Phương tiện tối ưu: <strong class="text-red-700">{route.vehicleTypes}</strong>
-                </span>
-                <span class="bg-slate-100 px-3 py-1 rounded-lg">
-                  Thời lượng đề xuất: <strong class="text-slate-900">{route.duration}</strong>
-                </span>
+              {/* Thông tin chính & Bảng giá nổi bật */}
+              <div class="lg:col-span-7 p-6 sm:p-8 flex flex-col justify-between space-y-6">
+                <div>
+                  <div class="inline-block bg-red-500/20 text-red-300 border border-red-500/30 text-xs font-bold px-3 py-1 rounded-md mb-2">
+                    ★ Phù hợp: {route.targetMarket}
+                  </div>
+                  <h3 class="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                    {route.title}
+                  </h3>
+                  <p class="text-xs sm:text-sm text-slate-300 mt-1">
+                    {route.fullTitle}
+                  </p>
+                </div>
+
+                <!-- BẢNG GIÁ THỰC TẾ CHO DÒNG XE -->
+                <div class="bg-slate-800/90 rounded-2xl p-4 sm:p-5 border border-slate-700/80">
+                  <div class="text-xs font-bold text-amber-400 uppercase tracking-wider mb-3 flex items-center justify-between">
+                    <span>Bảng Giá Thuê Xe Trọn Gói:</span>
+                    <span class="text-[11px] font-normal text-slate-300">Không phí ẩn</span>
+                  </div>
+
+                  <div class={`grid grid-cols-1 ${route.prices.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2'} gap-3`}>
+                    {route.prices.map((priceItem) => (
+                      <div class={`p-3.5 rounded-xl border relative ${priceItem.isPopular ? 'bg-red-950/60 border-red-500 shadow-md' : 'bg-slate-900/60 border-slate-700'}`}>
+                        {priceItem.isPopular && (
+                          <span class="absolute -top-2.5 right-3 bg-red-600 text-white text-[10px] font-black uppercase px-2 py-0.5 rounded-full shadow">
+                            Đặt Nhiều Nhất
+                          </span>
+                        )}
+                        <div class="text-xs font-bold text-slate-300">{priceItem.vehicle}</div>
+                        <div class="text-xl sm:text-2xl font-black text-amber-300 mt-1">
+                          {priceItem.price}
+                        </div>
+                        <div class="text-[11px] text-slate-400 mt-0.5">{priceItem.note}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <p class="text-[11px] text-slate-300 mt-3 pt-2.5 border-t border-slate-700/60 flex items-center gap-1.5">
+                    <span class="text-emerald-400 font-bold">✓</span>
+                    <span>{route.priceIncludes}</span>
+                  </p>
+                </div>
+
+                <!-- Nút liên hệ nhanh -->
+                <div class="flex flex-wrap gap-3">
+                  <a
+                    href={`/lien-he?route=${route.id}`}
+                    class="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-xl shadow-luxury transition-all flex items-center gap-2"
+                  >
+                    <span>Đặt Thuê Xe Tuyến Này</span>
+                    <span>→</span>
+                  </a>
+                  <a
+                    href={siteInfo.hotlineFormatted}
+                    class="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl transition-all"
+                  >
+                    Hotline: {siteInfo.hotline}
+                  </a>
+                  <a
+                    href={siteInfo.zalo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm px-5 py-3 rounded-xl transition-all"
+                  >
+                    Chat Zalo Báo Giá
+                  </a>
+                </div>
+
               </div>
 
-              <div>
-                <h3 class="text-xs font-bold text-slate-900 uppercase tracking-wider mb-2.5">
-                  Lịch Trình & Điểm Trải Nghiệm Tiêu Biểu:
-                </h3>
-                <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs sm:text-sm text-slate-600">
-                  {route.highlights.map((hl) => (
-                    <li class="flex items-start gap-2">
-                      <span class="text-red-600 font-bold mt-0.5">✓</span>
-                      <span>{hl}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            </div>
+          </div>
 
-              <div class="p-3.5 bg-red-50/70 border border-red-100 rounded-xl text-xs text-slate-700">
-                <strong class="text-red-700">Ưu thế Nhà xe Đông Dương:</strong> Tài xế dày dạn kinh nghiệm cung đường, chuẩn bị nước khoáng, khăn lạnh, điểm dừng nghỉ sạch sẽ tiện nghi phù hợp với tiêu chuẩn khách quốc tế.
-              </div>
+          <!-- PHẦN LỊCH TRÌNH CHI TIẾT TỪNG NGÀY -->
+          <div class="p-6 sm:p-8 bg-slate-50/60 border-t border-slate-200">
+            <div class="flex items-center gap-2 mb-6">
+              <span class="w-2.5 h-6 bg-red-600 rounded-full"></span>
+              <h4 class="text-lg sm:text-xl font-black text-slate-900 tracking-tight">
+                Chi Tiết Lịch Trình Từng Ngày ({route.duration})
+              </h4>
+            </div>
 
-              <div class="pt-2 flex flex-wrap gap-3">
-                <a
-                  href="/lien-he"
-                  class="bg-red-600 hover:bg-red-700 text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl shadow-luxury transition-all"
-                >
-                  Nhận Báo Giá Tuyến Này
-                </a>
-                <a
-                  href={siteInfo.hotlineFormatted}
-                  class="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl transition-all"
-                >
-                  Tư Vấn Nhanh: {siteInfo.hotline}
-                </a>
-              </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+              {route.itinerary.map((dayItem, dIdx) => (
+                <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-sm flex flex-col justify-between hover:border-red-300 transition-all">
+                  <div>
+                    <div class="flex items-center justify-between mb-2">
+                      <span class="bg-red-700 text-white text-xs font-black px-2.5 py-1 rounded-md">
+                        {dayItem.day}
+                      </span>
+                      <span class="text-[11px] font-bold text-slate-400">
+                        Chặng {dIdx + 1}
+                      </span>
+                    </div>
+                    <h5 class="font-bold text-slate-900 text-sm mb-3 text-red-950">
+                      {dayItem.route}
+                    </h5>
 
+                    <ul class="space-y-2 text-xs text-slate-600">
+                      {dayItem.activities.map((act) => (
+                        <li class="flex items-start gap-2">
+                          <span class="text-red-500 font-bold mt-0.5">•</span>
+                          <span class="leading-relaxed">{act}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500 font-medium">
+                    <span>Phục vụ suốt hành trình</span>
+                    <span class="text-emerald-600 font-bold">Lái xe đón tận nơi</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <!-- Các điểm trải nghiệm tiêu biểu -->
+            <div class="mt-6 p-4 bg-amber-50/70 border border-amber-200/80 rounded-2xl">
+              <div class="text-xs font-bold text-amber-900 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                <span>📍</span> Các Điểm Check-In Nổi Bật Nhất Trên Tuyến:
+              </div>
+              <div class="flex flex-wrap gap-2">
+                {route.highlights.map((hl) => (
+                  <span class="bg-white px-3 py-1 rounded-lg border border-amber-200 text-xs font-medium text-slate-700 shadow-2xs">
+                    ✓ {hl}
+                  </span>
+                ))}
+              </div>
             </div>
 
           </div>
+
         </div>
       ))}
 
     </div>
   </section>
 
+  <!-- CÁC TUYẾN DU LỊCH MIỀN BẮC KHÁC -->
   <section class="py-16 bg-white border-t border-slate-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
       <div class="text-center max-w-3xl mx-auto mb-12">
         <span class="text-xs font-bold text-red-700 uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full border border-red-200 inline-block mb-2">
-          Chương Trình Tour Phổ Biến
+          Điểm Đến Trọng Điểm
         </span>
         <h2 class="text-2xl sm:text-3xl font-black text-slate-900">
-          Các Combo Lịch Trình Tour Lữ Hành Thường Thuê Xe
+          Các Tuyến Du Lịch Phổ Biến Khác
         </h2>
         <p class="text-sm text-slate-600 mt-2">
-          Gợi ý các hành trình kinh điển được các đối tác lữ hành inbound và đoàn khách Sài Gòn đặt thuê xe nhiều nhất tại Đông Dương Travel:
+          Ngoài 4 tuyến đèo dốc trọng điểm, Đông Dương Travel nhận chạy hợp đồng tất cả các tuyến cao tốc phía Bắc đi Vịnh Hạ Long, Tràng An Ninh Bình, Cát Bà, Mai Châu, Mộc Châu...
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-red-300 transition-all">
-          <div class="text-red-700 font-black text-base mb-1">Tour Di Sản & Nghỉ Dưỡng</div>
-          <h3 class="font-bold text-slate-900 text-lg mb-2">Hà Nội - Ninh Bình - Hạ Long (4N3Đ)</h3>
-          <p class="text-xs text-slate-600 mb-4">Lộ trình cao tốc 100% êm ái, thích hợp khách Pháp, Nhật, Thái Lan và đoàn người cao tuổi.</p>
-          <div class="text-xs text-slate-500 space-y-1 border-t border-slate-200 pt-3">
-            <div>• Ngày 1: Đón Nội Bài - Hà Nội City</div>
-            <div>• Ngày 2: Hà Nội - Tràng An Ninh Bình</div>
-            <div>• Ngày 3: Ninh Bình - Vịnh Hạ Long</div>
-            <div>• Ngày 4: Hạ Long - Tiễn Sân Bay Nội Bài</div>
-          </div>
-        </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {popularRoutes.map((route) => (
+          <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200 hover:border-red-300 transition-all duration-300 flex flex-col">
+            
+            <div class="relative h-48 w-full overflow-hidden">
+              <img
+                src={route.image}
+                alt={route.title}
+                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
+              
+              <div class="absolute top-3 left-3">
+                <span class="bg-red-700 text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow">
+                  {route.duration}
+                </span>
+              </div>
 
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-red-300 transition-all">
-          <div class="text-red-700 font-black text-base mb-1">Tour Chinh Phục Núi Rừng</div>
-          <h3 class="font-bold text-slate-900 text-lg mb-2">Hà Nội - Sapa Fansipan (3N2Đ)</h3>
-          <p class="text-xs text-slate-600 mb-4">Đoàn khách Thái Lan, Hàn Quốc, khách đoàn Sài Gòn mê săn mây và khí hậu se lạnh.</p>
-          <div class="text-xs text-slate-500 space-y-1 border-t border-slate-200 pt-3">
-            <div>• Ngày 1: Nội Bài / Hà Nội - Cao tốc Lào Cai - Sapa</div>
-            <div>• Ngày 2: Chinh phục Fansipan - Bản Cát Cát</div>
-            <div>• Ngày 3: Chợ Sapa - Khởi hành về lại Hà Nội</div>
-          </div>
-        </div>
+              <div class="absolute bottom-3 left-3 right-3">
+                <span class="text-xs text-amber-300 font-semibold block">Khoảng cách: {route.distance}</span>
+              </div>
+            </div>
 
-        <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-red-300 transition-all">
-          <div class="text-red-700 font-black text-base mb-1">Tour Kỳ Vĩ Đông Bắc</div>
-          <h3 class="font-bold text-slate-900 text-lg mb-2">Hà Nội - Hà Giang - Đồng Văn (4N3Đ)</h3>
-          <p class="text-xs text-slate-600 mb-4">Xe 29 chỗ đời mới động cơ khỏe vượt đèo Mã Pí Lèng, sông Nho Quế, Cột cờ Lũng Cú.</p>
-          <div class="text-xs text-slate-500 space-y-1 border-t border-slate-200 pt-3">
-            <div>• Ngày 1: Hà Nội - TP. Hà Giang - Quản Bạ</div>
-            <div>• Ngày 2: Yên Minh - Nhà Pao - Đồng Văn</div>
-            <div>• Ngày 3: Đèo Mã Pí Lèng - Du thuyền Sông Nho Quế</div>
-            <div>• Ngày 4: Hà Giang về lại Hà Nội / Nội Bài</div>
+            <div class="p-5 flex-grow flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="text-base font-bold text-slate-900 hover:text-red-700 transition-colors">
+                  {route.title}
+                </h3>
+                
+                <div class="mt-2 text-xs font-semibold text-red-600 bg-red-50 p-2 rounded-lg">
+                  ★ {route.targetMarket}
+                </div>
+
+                <ul class="mt-3 space-y-1.5 text-xs text-slate-600">
+                  {route.highlights.slice(0, 3).map((hl) => (
+                    <li class="flex items-start gap-1.5">
+                      <span class="text-red-500 font-bold">•</span>
+                      <span>{hl}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
+                <span class="text-slate-500 font-medium">Xe: <strong>{route.vehicleTypes}</strong></span>
+                <a href="/lien-he" class="text-red-600 font-bold hover:underline">
+                  Báo giá tuyến →
+                </a>
+              </div>
+            </div>
+
           </div>
-        </div>
+        ))}
       </div>
+
     </div>
   </section>
 
+  <!-- FORM LIÊN HỆ ĐẶT XE & NHẬN BÁO GIÁ -->
   <section class="py-16 bg-slate-100">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       <QuoteForm />

@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import QuoteForm from '../components/QuoteForm.astro';
-import { siteInfo, targetMarkets, fleetVehicles, popularRoutes, b2bBenefits } from '../data/siteData.js';
+import { siteInfo, targetMarkets, fleetVehicles, featuredCustomerRoutes, popularRoutes, b2bBenefits } from '../data/siteData.js';
 ---
 
 <Layout
@@ -240,84 +240,145 @@ import { siteInfo, targetMarkets, fleetVehicles, popularRoutes, b2bBenefits } fr
     </div>
   </section>
 
-  <!-- 4. TUYẾN DU LỊCH PHÍA BẮC -->
-  <section class="py-16 sm:py-20 bg-white">
+  <!-- 4. TUYẾN DU LỊCH PHÍA BẮC & BẢNG GIÁ THỰC TẾ -->
+  <section class="py-16 sm:py-20 bg-slate-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="text-xs font-bold text-red-700 uppercase tracking-widest bg-red-50 px-3 py-1 rounded-full border border-red-200 inline-block mb-2">
-          Cung Đường Thế Mạnh
+        <span class="text-xs font-bold text-red-700 uppercase tracking-widest bg-red-100 px-3 py-1 rounded-full border border-red-200 inline-block mb-2">
+          🔥 Tuyến Đi Nhiều Nhất & Báo Giá Thực Tế
         </span>
         <h2 class="text-2xl sm:text-4xl font-black text-slate-900 tracking-tight">
-          Các Tuyến Du Lịch Phía Bắc Nhà Xe Đông Dương Nhận Chạy
+          Các Tuyến Tour Khách Đặt Nhiều Nhất
         </h2>
         <p class="text-sm sm:text-base text-slate-600 mt-2">
-          Khởi hành từ Hà Nội / Sân bay Nội Bài đi các danh lam thắng cảnh miền Bắc, kinh nghiệm chạy tour dẻo dai, phục vụ chu đáo mọi nhu cầu của đoàn.
+          Bảng giá trọn gói xe du lịch 16 chỗ, 29 chỗ & 45 chỗ đời mới xuất phát từ Hà Nội / Sân bay Nội Bài. Tài xế kinh nghiệm phục vụ đoàn lữ hành & khách du lịch.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {popularRoutes.slice(0, 6).map((route) => (
-          <div class="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl border border-slate-200 hover:border-red-300 transition-all duration-300 flex flex-col">
+      <!-- 4 TUYẾN HOT CÓ GIÁ CỤ THỂ -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+        {featuredCustomerRoutes.map((route) => (
+          <div class="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl border border-slate-200 hover:border-red-400 transition-all duration-300 flex flex-col justify-between group">
             
-            <div class="relative h-48 w-full overflow-hidden">
-              <img
-                src={route.image}
-                alt={route.title}
-                class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-              />
-              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
-              
-              <div class="absolute top-3 left-3">
-                <span class="bg-red-700 text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow">
-                  {route.duration}
-                </span>
-              </div>
-
-              <div class="absolute bottom-3 left-3 right-3">
-                <span class="text-xs text-amber-300 font-semibold block">Khoảng cách: {route.distance}</span>
-              </div>
-            </div>
-
-            <div class="p-5 flex-grow flex flex-col justify-between space-y-4">
-              <div>
-                <h3 class="text-base font-bold text-slate-900 hover:text-red-700 transition-colors">
-                  {route.title}
-                </h3>
+            <div>
+              <div class="relative h-48 w-full overflow-hidden">
+                <img
+                  src={route.image}
+                  alt={route.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
                 
-                <div class="mt-2 text-xs font-semibold text-red-600 bg-red-50 p-2 rounded-lg">
-                  ★ {route.targetMarket}
+                <div class="absolute top-3 left-3 flex flex-wrap gap-1">
+                  <span class="bg-red-700 text-white text-[11px] font-black px-2.5 py-1 rounded-md shadow">
+                    {route.duration}
+                  </span>
                 </div>
 
-                <ul class="mt-3 space-y-1.5 text-xs text-slate-600">
+                <div class="absolute bottom-3 left-3 right-3">
+                  <span class="text-xs text-amber-300 font-bold block">{route.tag}</span>
+                </div>
+              </div>
+
+              <div class="p-5 space-y-4">
+                <div>
+                  <h3 class="text-lg font-black text-slate-900 group-hover:text-red-700 transition-colors">
+                    {route.title}
+                  </h3>
+                  <div class="text-[11px] text-slate-500 font-medium mt-0.5 line-clamp-1">
+                    {route.fullTitle}
+                  </div>
+                </div>
+
+                <!-- Khối giá -->
+                <div class="bg-red-50/80 border border-red-100 p-3 rounded-xl space-y-1.5">
+                  <div class="text-[10px] uppercase font-black tracking-wider text-red-800">
+                    Bảng Giá Trọn Gói:
+                  </div>
+                  {route.prices.map((p) => (
+                    <div class="flex items-center justify-between text-xs">
+                      <span class="text-slate-700 font-semibold">{p.vehicle}:</span>
+                      <span class={`font-black ${p.isPopular ? 'text-red-700 text-sm' : 'text-slate-900'}`}>
+                        {p.price}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+
+                <!-- Điểm dừng chân nổi bật -->
+                <ul class="space-y-1 text-xs text-slate-600 border-t border-slate-100 pt-3">
                   {route.highlights.slice(0, 3).map((hl) => (
                     <li class="flex items-start gap-1.5">
                       <span class="text-red-500 font-bold">•</span>
-                      <span>{hl}</span>
+                      <span class="line-clamp-1">{hl}</span>
                     </li>
                   ))}
                 </ul>
               </div>
+            </div>
 
-              <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
-                <span class="text-slate-500 font-medium">Loại xe: <strong>{route.vehicleTypes}</strong></span>
-                <a href="/tuyen-du-lich" class="text-red-600 font-bold hover:underline">
-                  Chi tiết tuyến →
-                </a>
-              </div>
+            <div class="p-5 pt-0">
+              <a
+                href={`/tuyen-du-lich#${route.id}`}
+                class="w-full inline-flex items-center justify-center gap-1.5 bg-slate-900 group-hover:bg-red-700 text-white font-bold py-2.5 px-4 rounded-xl text-xs transition-colors shadow-sm"
+              >
+                <span>Xem Lịch Trình Chi Tiết</span>
+                <span>→</span>
+              </a>
             </div>
 
           </div>
         ))}
       </div>
 
+      <!-- CÁC TUYẾN DU LỊCH CAO TỐC KHÁC -->
+      <div class="bg-white p-6 sm:p-8 rounded-3xl border border-slate-200 shadow-sm">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+          <div>
+            <h3 class="text-lg font-black text-slate-900">
+              Các Tuyến Du Lịch Phía Bắc Phổ Biến Khác
+            </h3>
+            <p class="text-xs text-slate-500">
+              Hà Nội City Tour, Đón tiễn Nội Bài 24/7, Vịnh Hạ Long, Tràng An Ninh Bình, Cát Bà...
+            </p>
+          </div>
+          <a
+            href="/tuyen-du-lich"
+            class="inline-flex items-center gap-1.5 text-xs font-bold text-red-600 hover:text-red-800"
+          >
+            <span>Xem tất cả tuyến & lịch trình</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+          {popularRoutes.map((r) => (
+            <a
+              href="/tuyen-du-lich"
+              class="p-3 rounded-xl bg-slate-50 hover:bg-red-50 border border-slate-200/80 hover:border-red-300 transition-all text-center flex flex-col items-center justify-center gap-1.5 group"
+            >
+              <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-700 font-black text-xs group-hover:bg-red-700 group-hover:text-white transition-colors">
+                📍
+              </div>
+              <div class="font-bold text-xs text-slate-900 group-hover:text-red-700 transition-colors line-clamp-1">
+                {r.title.split('-')[0].trim()}
+              </div>
+              <div class="text-[10px] text-slate-500 font-medium">
+                {r.duration}
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+
       <div class="text-center mt-10">
         <a
           href="/tuyen-du-lich"
-          class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold px-8 py-3.5 rounded-xl shadow transition-all text-sm"
+          class="inline-flex items-center gap-2 bg-gradient-to-r from-red-700 via-red-600 to-red-700 hover:from-red-800 hover:to-red-800 text-white font-bold px-8 py-3.5 rounded-xl shadow-luxury transition-all text-sm"
         >
-          <span>Khám Phá Toàn Bộ Tuyến Phía Bắc & Điểm Đón Trả</span>
-          <svg class="w-4 h-4 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <span>Xem Toàn Bộ Bảng Giá & Lịch Trình Chi Tiết Các Tuyến</span>
+          <svg class="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
           </svg>
         </a>

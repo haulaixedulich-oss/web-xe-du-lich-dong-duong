@@ -52,9 +52,10 @@ const { isCompact = false } = Astro.props;
           required
           class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-red-600 focus:ring-2 focus:ring-red-100 text-sm font-bold text-slate-900 bg-white transition-all shadow-sm"
         >
-          <option value="29_seats" class="text-slate-900 bg-white font-bold py-2">Xe 29 Chỗ Cao Cấp (Đoàn 12 - 25 khách)</option>
+          <option value="16_seats" class="text-slate-900 bg-white font-bold py-2">Xe 16 Chỗ Đời Mới (Đoàn 7 - 14 khách)</option>
+          <option value="29_seats" class="text-slate-900 bg-white font-bold py-2" selected>Xe 29 Chỗ Bầu Hơi (Đoàn 12 - 25 khách)</option>
           <option value="45_seats" class="text-slate-900 bg-white font-bold py-2">Xe 45 Chỗ Universe VIP (Đoàn 28 - 43 khách)</option>
-          <option value="both" class="text-slate-900 bg-white font-bold py-2">Cần Cả Xe 29 Chỗ & 45 Chỗ</option>
+          <option value="both" class="text-slate-900 bg-white font-bold py-2">Cần Thuê Nhiều Xe / Đoàn Lớn</option>
         </select>
       </div>
     </div>
@@ -68,13 +69,20 @@ const { isCompact = false } = Astro.props;
         name="route_selection"
         class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:border-red-600 focus:ring-2 focus:ring-red-100 text-sm font-bold text-slate-900 bg-white transition-all shadow-sm"
       >
-        <option value="noibai_hanoi" class="text-slate-900 bg-white font-bold py-2">✈️ Đón Tiễn Sân Bay Nội Bài & Hà Nội City Tour</option>
-        <option value="hanoi_sapa" class="text-slate-900 bg-white font-bold py-2">🏔️ Hà Nội - Sapa - Fansipan (2N1Đ / 3N2Đ)</option>
-        <option value="hanoi_ninhbinh" class="text-slate-900 bg-white font-bold py-2">🚣 Hà Nội - Ninh Bình (Tràng An - Tam Cốc - Bái Đính)</option>
-        <option value="hanoi_halong" class="text-slate-900 bg-white font-bold py-2">⛵ Hà Nội - Vịnh Hạ Long / Cảng Tàu Quốc Tế</option>
-        <option value="hanoi_hagiang" class="text-slate-900 bg-white font-bold py-2">⛰️ Hà Nội - Hà Giang - Đèo Mã Pí Lèng - Đồng Văn</option>
-        <option value="hanoi_catba_mai_chau" class="text-slate-900 bg-white font-bold py-2">🏞️ Tuyến Phía Bắc Khác (Cát Bà, Mai Châu, Mộc Châu, Cao Bằng...)</option>
-        <option value="custom" class="text-slate-900 bg-white font-bold py-2">✏️ Lịch trình riêng theo yêu cầu của đoàn</option>
+        <optgroup label="🔥 Các Tuyến Hot Có Bảng Giá Trọn Gói:">
+          <option value="hanoi_hagiang_3n2d" class="text-slate-900 bg-white font-bold py-2">🔥 Hà Nội - Hà Giang 3N2Đ (16c: 14tr | 29c: 18tr)</option>
+          <option value="hanoi_mucangchai_3n2d" class="text-slate-900 bg-white font-bold py-2">🌾 Hà Nội - Mù Cang Chải 3N2Đ (16c: 9tr | 29c: 12tr | 45c: 15tr)</option>
+          <option value="hanoi_hagiang_caobang_5n4d" class="text-slate-900 bg-white font-bold py-2">⛰️ Hà Nội - Hà Giang - Cao Bằng 5N4Đ (16c: 19tr | 29c: 25tr)</option>
+          <option value="hanoi_hagiang_sapa_5n4d" class="text-slate-900 bg-white font-bold py-2">🏔️ Hà Nội - Hà Giang - Sapa 5N4Đ (16c: 19tr | 29c: 25tr)</option>
+        </optgroup>
+        <optgroup label="Tuyến Điểm Khác:">
+          <option value="noibai_hanoi" class="text-slate-900 bg-white font-bold py-2">✈️ Đón Tiễn Sân Bay Nội Bài & Hà Nội City Tour</option>
+          <option value="hanoi_sapa" class="text-slate-900 bg-white font-bold py-2">🏔️ Hà Nội - Sapa - Fansipan (2N1Đ / 3N2Đ)</option>
+          <option value="hanoi_ninhbinh" class="text-slate-900 bg-white font-bold py-2">🚣 Hà Nội - Ninh Bình (Tràng An - Tam Cốc - Bái Đính)</option>
+          <option value="hanoi_halong" class="text-slate-900 bg-white font-bold py-2">⛵ Hà Nội - Vịnh Hạ Long / Cảng Tàu Quốc Tế</option>
+          <option value="hanoi_catba_mai_chau" class="text-slate-900 bg-white font-bold py-2">🏞️ Tuyến Khác (Cát Bà, Mai Châu, Mộc Châu, Ba Bể...)</option>
+          <option value="custom" class="text-slate-900 bg-white font-bold py-2">✏️ Lịch trình riêng theo yêu cầu của đoàn</option>
+        </optgroup>
       </select>
     </div>
 

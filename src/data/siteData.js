@@ -1,7 +1,7 @@
 export const siteInfo = {
   name: 'Nhà Xe Đông Dương',
   brandName: 'Đông Dương Travel',
-  tagline: 'Chuyên Cho Thuê Xe Du Lịch 29 Chỗ & 45 Chỗ Miền Bắc',
+  tagline: 'Chuyên Cho Thuê Xe Du Lịch 16 - 29 - 45 Chỗ Miền Bắc',
   slogan: 'Chuyên Nghiệp - Đúng Giờ - Chuẩn Tour Quốc Tế & Đối Tác Lữ Hành',
   domain: 'xedongduong.com',
   hotline: '0369 078 889',
@@ -54,6 +54,25 @@ export const targetMarkets = [
 ];
 
 export const fleetVehicles = [
+  {
+    id: 'xe-16-cho',
+    name: 'Xe Du Lịch 16 Chỗ Đời Mới',
+    models: 'Ford Transit Premium / Hyundai Solati',
+    capacity: '16 hành khách + 1 tài xế',
+    idealGroup: 'Phù hợp đoàn 7 - 14 khách + hành lý gọn gàng',
+    image: '/images/destinations/ha-giang.jpg',
+    tag: 'Linh hoạt, vượt đèo dốc xuất sắc',
+    description: 'Dòng xe 16 chỗ Hyundai Solati và Ford Transit đời mới, trần cao thoáng đãng, máy lạnh sâu, động cơ bền bỉ chuyên vượt các cung đèo dốc Hà Giang, Sapa, Mù Cang Chải với chi phí tối ưu nhất.',
+    features: [
+      'Động cơ mạnh mẽ, vào cua đèo núi êm ái và linh hoạt',
+      'Nội thất ghế bọc da cao cấp, không gian để chân thoải mái',
+      'Khoang hành lý rộng rãi phía sau cho đoàn gia đình và nhóm bạn bè',
+      'Hệ thống điều hòa cửa gió đến từng hàng ghế, mát lạnh sâu',
+      'Bác tài nhiều năm kinh nghiệm chuyên tuyến Tây Bắc và Đông Bắc',
+      'Phục vụ nước uống, khăn lạnh và hỗ trợ hành lý chu đáo',
+    ],
+    recommendedFor: 'Tour khám phá Hà Giang 3N2Đ, Mù Cang Chải 3N2Đ, Hà Giang - Sapa, đón tiễn sân bay Nội Bài cho nhóm gia đình.',
+  },
   {
     id: 'xe-29-cho',
     name: 'Xe Du Lịch 29 Chỗ Cao Cấp',
@@ -115,13 +134,309 @@ export const fleetGallery = [
   { src: '/images/vehicles/khach-hang-tuoi-cuoi.jpg', title: 'Khách hàng hài lòng', desc: 'Nụ cười rạng rỡ của du khách sau mỗi chuyến hành trình' },
 ];
 
+/**
+ * 4 Tuyến đường khách hàng sử dụng nhiều nhất kèm bảng giá thực tế & lịch trình chi tiết từng ngày
+ */
+export const featuredCustomerRoutes = [
+  {
+    id: 'hanoi-hagiang-3n2d',
+    title: 'Hà Nội - Hà Giang (3N2Đ)',
+    fullTitle: 'Hà Nội - Hà Giang - Cột Cờ Lũng Cú - Mã Pí Lèng - Sông Nho Quế',
+    tag: 'Cung Đường Huyền Thoại',
+    duration: '3 Ngày 2 Đêm',
+    distance: 'Khoảng 320km / chiều (Cung đèo Đông Bắc)',
+    vehicleTypes: 'Xe 16 Chỗ & 29 Chỗ',
+    targetMarket: 'Khách Sài Gòn, Khách Quốc Tế & Đoàn Khám Phá',
+    image: '/images/destinations/ha-giang.jpg',
+    startingPrice: '14.000.000₫',
+    prices: [
+      { vehicle: 'Xe 16 chỗ', price: '14.000.000₫', rawPrice: 14000000, note: 'Ford Transit / Solati đời mới' },
+      { vehicle: 'Xe 29 chỗ', price: '18.000.000₫', rawPrice: 18000000, note: 'Thaco Meadow bầu hơi êm ái', isPopular: true },
+    ],
+    priceIncludes: 'Trọn gói xe phục vụ suốt hành trình 3N2Đ, xăng dầu, vé cầu đường cao tốc, tài xế chuyên đèo núi am hiểu điểm check-in.',
+    highlights: [
+      'Check in Km 0 Hà Giang, Dốc Bắc Sum ngoạn mục, Núi Đôi Cô Tiên Quản Bạ',
+      'Vượt Dốc Thẩm Mã, thăm Dinh Thự Họ Vương (Vua Mèo), bản cổ Lô Lô Chải',
+      'Chinh phục Cột cờ Lũng Cú cực Bắc Tổ quốc linh thiêng',
+      'Đỉnh đèo Mã Pí Lèng hùng vĩ & du thuyền hẻm vực Tu Sản - Sông Nho Quế',
+      'Check-in Bãi đá Mặt Trăng, Nhà của Pao huyền thoại'
+    ],
+    itinerary: [
+      {
+        day: 'Ngày 1',
+        route: 'Hà Nội → Hà Giang (Nghỉ đêm Yên Minh)',
+        activities: [
+          'Xe đón quý đoàn tại Hà Nội khởi hành đi Hà Giang',
+          'Dừng chân nghỉ ngơi và ăn trưa tại Bắc Quang',
+          'Check-in Cột mốc Km 0 Hà Giang',
+          'Chinh phục Dốc Bắc Sum quanh co kỳ vĩ',
+          'Ngắm toàn cảnh Núi đôi Cô Tiên (Tam Sơn - Quản Bạ)',
+          'Nhận phòng và nghỉ đêm tại thị trấn Yên Minh'
+        ]
+      },
+      {
+        day: 'Ngày 2',
+        route: 'Yên Minh → Đồng Văn (Nghỉ đêm Đồng Văn)',
+        activities: [
+          'Sáng: Khởi hành từ Yên Minh đi Đồng Văn',
+          'Check-in Dốc Thẩm Mã - khúc cua chữ S huyền thoại vùng cao',
+          'Thăm quan Di tích kiến trúc nghệ thuật Dinh Thự Họ Vương (Vua Mèo)',
+          'Chinh phục Cột cờ Lũng Cú - điểm cực Bắc địa đầu Tổ quốc',
+          'Khám phá Làng văn hóa du lịch Lô Lô Chải cổ tích',
+          'Dùng bữa trưa tại khu vực Cột cờ Lũng Cú',
+          'Chiều: Check-in Tượng đài Con Đường Hạnh Phúc',
+          'Chinh phục Đỉnh đèo Mã Pí Lèng - một trong "Tứ đại đỉnh đèo" Việt Nam',
+          'Trải nghiệm đi thuyền ngắm Hẻm vực Tu Sản - Sông Nho Quế nước xanh như ngọc',
+          'Nhận phòng và nghỉ đêm tại trung tâm thị trấn Đồng Văn'
+        ]
+      },
+      {
+        day: 'Ngày 3',
+        route: 'Đồng Văn → Hà Nội (Kết thúc chương trình)',
+        activities: [
+          'Sáng: Check-in Bãi đá Mặt Trăng hoang sơ độc đáo',
+          'Thăm quan Nhà của Pao tại Làng văn hóa Lũng Cẩm',
+          'Dừng chân thưởng thức bữa trưa tại Quản Bạ',
+          'Lên xe theo cao tốc về lại Hà Nội, kết thúc chuyến đi thành công tốt đẹp'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'hanoi-mucangchai-3n2d',
+    title: 'Hà Nội - Khau Phạ - Mù Cang Chải (3N2Đ)',
+    fullTitle: 'Hà Nội - Đèo Khau Phạ - Đồi Mâm Xôi - Rừng Trúc Pú Luông',
+    tag: 'Mùa Vàng Danh Thắng Quốc Gia',
+    duration: '3 Ngày 2 Đêm',
+    distance: 'Khoảng 300km / chiều (Cung đèo Tây Bắc)',
+    vehicleTypes: 'Xe 16 Chỗ, 29 Chỗ & 45 Chỗ',
+    targetMarket: 'Khách Quốc Tế Mê Nhiếp Ảnh, Đoàn Gia Đình, Khách Sài Gòn',
+    image: '/images/destinations/mu-cang-chai.jpg',
+    startingPrice: '9.000.000₫',
+    prices: [
+      { vehicle: 'Xe 16 chỗ', price: '9.000.000₫', rawPrice: 9000000, note: 'Đoàn 7 - 14 khách linh hoạt' },
+      { vehicle: 'Xe 29 chỗ', price: '12.000.000₫', rawPrice: 12000000, note: 'Thaco Meadow bầu hơi êm ái', isPopular: true },
+      { vehicle: 'Xe 45 chỗ', price: '15.000.000₫', rawPrice: 15000000, note: 'Universe VIP đoàn lớn' },
+    ],
+    priceIncludes: 'Trọn gói xe phục vụ suốt tuyến 3N2Đ, xăng dầu, phí cầu đường, tài xế bản lĩnh thạo cung đèo Khau Phạ.',
+    highlights: [
+      'Check-in Đồi Chè Thanh Sơn xanh bát ngát, thưởng thức bữa sáng Hoà Lạc',
+      'Chinh phục Đèo Khau Phạ - một trong tứ đại đỉnh đèo hiểm trở bậc nhất',
+      'Chiêm ngưỡng hoàng hôn tại Võng lúa Móng Ngựa - Dế Xu Phình',
+      'Đồi Mâm Xôi - kiệt tác ruộng bậc thang xoáy tròn tầng tầng lớp lớp',
+      'Khám phá Rừng Trúc Pú Luông xanh biếc & trải nghiệm làm Cốm Xanh Tú Lệ'
+    ],
+    itinerary: [
+      {
+        day: 'Ngày 1',
+        route: 'Hà Nội - Khau Phạ - Mù Cang Chải (Nghỉ đêm Bản Thái)',
+        activities: [
+          'Thưởng thức bữa sáng đặc sản tại Hoà Lạc',
+          'Dừng chân tại Đồi Chè Thanh Sơn - nơi có những đồi chè xanh ngát bao la',
+          'Buổi trưa nghỉ chân ăn trưa tại nhà hàng địa phương',
+          'Vượt Đèo Khau Phạ hùng vĩ tiếp tục di chuyển đến Bản Thái - Mù Cang Chải',
+          'Ngắm hoàng hôn rực rỡ tại Võng lúa Móng Ngựa - Dế Xu Phình',
+          'Lưu trú một đêm tại nhà sàn cộng đồng của người dân bản địa tại Bản Thái - Mù Cang Chải'
+        ]
+      },
+      {
+        day: 'Ngày 2',
+        route: 'Mù Cang Chải - Bản Ít Thái (Nghỉ đêm Homestay)',
+        activities: [
+          'Thức dậy đón bình minh vùng cao trong lành, dùng bữa sáng',
+          'Check-in Đồi Mâm Xôi - biểu tượng nổi tiếng của Mù Cang Chải với những thửa ruộng bậc thang được tạo hình xoáy tròn, xếp tầng mềm mại như một chiếc mâm xôi khổng lồ giữa đại ngàn',
+          'Khám phá Rừng Trúc Pú Luông với trùng trùng điệp điệp những thân cây cao vút',
+          'Di chuyển về check-in homestay, cảm nhận nhịp sống mộc mạc và ẩm thực truyền thống địa phương'
+        ]
+      },
+      {
+        day: 'Ngày 3',
+        route: 'Mù Cang Chải - Tú Lệ - Hà Nội (Kết thúc hành trình)',
+        activities: [
+          'Trải nghiệm làm cốm xanh Tú Lệ mềm dẻo thơm ngon tại khu vực chợ Tú Lệ',
+          'Check-in biểu tượng Mù Cang Chải',
+          'Dừng nghỉ chân dùng bữa trưa tại nhà hàng địa phương',
+          'Lên xe về Hà Nội và kết thúc hành trình khám phá tốt đẹp'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'hanoi-hagiang-caobang-5n4d',
+    title: 'Hà Nội - Hà Giang - Cao Bằng (5N4Đ)',
+    fullTitle: 'Hà Nội - Hà Giang - Đèo 14 Tầng - Pác Bó - Thác Bản Giốc - Lạng Sơn',
+    tag: 'Đại Ngàn Đông Bắc - Vòng Cung Di Sản',
+    duration: '5 Ngày 4 Đêm',
+    distance: 'Hơn 850km (Vòng cung Đông Bắc trọn vẹn)',
+    vehicleTypes: 'Xe 16 Chỗ & 29 Chỗ Vượt Đèo Núi',
+    targetMarket: 'Khách Pháp, Thái Lan, Khách Đoàn Lữ Hành, Khách Sài Gòn',
+    image: '/images/destinations/cao-bang.jpg',
+    startingPrice: '19.000.000₫',
+    prices: [
+      { vehicle: 'Xe 16 chỗ', price: '19.000.000₫', rawPrice: 19000000, note: 'Ford Transit / Solati đời mới' },
+      { vehicle: 'Xe 29 chỗ', price: '25.000.000₫', rawPrice: 25000000, note: 'Thaco Meadow bầu hơi êm ái', isPopular: true },
+    ],
+    priceIncludes: 'Trọn gói xe 5N4Đ, xăng dầu, phí cầu đường cao tốc, tài xế bản lĩnh chuyên cung đèo Đông Bắc.',
+    highlights: [
+      'Trọn cảnh sắc Hà Giang: Km 0, Núi đôi Cô Tiên, Dốc Thẩm Mã, Lũng Cú, Mã Pí Lèng, Nho Quế',
+      'Làng văn hóa Mèo Vạc & chinh phục Đèo 14 tầng Mẻ Pia ngoạn mục',
+      'Khu di tích lịch sử Pác Bó thiêng liêng, Suối Lê-nin trong vắt, Núi Các Mác',
+      'Động Ngườm Ngao thạch nhũ kỳ ảo & Thác Bản Giốc hùng vĩ nhất Đông Nam Á',
+      'Quần thể Chùa Động Tam Thanh, Nhị Thanh và Cột cờ Núi Phai Vệ xứ Lạng'
+    ],
+    itinerary: [
+      {
+        day: 'Ngày 1',
+        route: 'Hà Nội → Hà Giang (Nghỉ đêm Yên Minh)',
+        activities: [
+          'Khởi hành từ Hà Nội theo hướng Hà Giang',
+          'Dừng chân ăn trưa tại Bắc Quang',
+          'Check-in Cột mốc Km 0 Hà Giang',
+          'Chinh phục Dốc Bắc Sum',
+          'Ngắm thắng cảnh Núi đôi Cô Tiên Quản Bạ',
+          'Nghỉ đêm tại thị trấn Yên Minh'
+        ]
+      },
+      {
+        day: 'Ngày 2',
+        route: 'Yên Minh → Đồng Văn (Nghỉ đêm Đồng Văn)',
+        activities: [
+          'Sáng: Khởi hành từ Yên Minh đi Đồng Văn',
+          'Check-in Dốc Thẩm Mã uốn lượn',
+          'Thăm quan Di tích Dinh thự Họ Vương',
+          'Chinh phục Cột cờ Lũng Cú & thăm bản Lô Lô Chải',
+          'Ăn trưa tại khu vực Cột cờ Lũng Cú',
+          'Chiều: Đỉnh đèo Mã Pí Lèng hùng vĩ',
+          'Đi thuyền trên Sông Nho Quế ngắm hẻm vực Tu Sản',
+          'Nghỉ đêm tại thị trấn Đồng Văn'
+        ]
+      },
+      {
+        day: 'Ngày 3',
+        route: 'Đồng Văn → Cao Bằng (Nghỉ đêm TP. Cao Bằng)',
+        activities: [
+          'Check-in Tượng đài Con Đường Hạnh Phúc',
+          'Khám phá Làng văn hoá du lịch cộng đồng Mèo Vạc',
+          'Dừng chân ăn trưa tại Bảo Lạc',
+          'Check-in Đèo 14 tầng Mẻ Pia ngoạn mục bậc nhất Tây Bắc',
+          'Thăm Khu di tích lịch sử Pác Bó (Suối Lê-nin, Núi Các Mác)',
+          'Nhận phòng và nghỉ đêm tại TP. Cao Bằng'
+        ]
+      },
+      {
+        day: 'Ngày 4',
+        route: 'Cao Bằng → Bản Giốc → Lạng Sơn (Nghỉ đêm Lạng Sơn)',
+        activities: [
+          'Sáng: Khám phá kỳ quan Động Ngườm Ngao thạch nhũ tráng lệ',
+          'Chiêm ngưỡng Thác Bản Giốc - tuyệt tác thiên nhiên biên giới',
+          'Dùng bữa trưa tại khu vực Thác Bản Giốc',
+          'Khởi hành theo quốc lộ biên giới về TP. Lạng Sơn',
+          'Nhận phòng và nghỉ đêm tại TP. Lạng Sơn'
+        ]
+      },
+      {
+        day: 'Ngày 5',
+        route: 'Lạng Sơn → Hà Nội (Kết thúc chương trình)',
+        activities: [
+          'Thăm quan quần thể Động Tam Thanh, Động Nhị Thanh',
+          'Check-in Cột cờ Núi Phai Vệ ngắm toàn cảnh thành phố xứ Lạng',
+          'Ăn trưa đặc sản vịt quay Lạng Sơn trứ danh',
+          'Lên xe theo cao tốc Lạng Sơn - Hà Nội về lại điểm đón ban đầu'
+        ]
+      }
+    ]
+  },
+  {
+    id: 'hanoi-hagiang-sapa-5n4d',
+    title: 'Hà Nội - Hà Giang - Sapa (5N4Đ)',
+    fullTitle: 'Hà Nội - Hà Giang - Đồng Văn - Sapa - Fansipan - Cầu Kính Rồng Mây',
+    tag: 'Siêu Tuyến Liên Kết Đông & Tây Bắc',
+    duration: '5 Ngày 4 Đêm',
+    distance: 'Hơn 800km (Liên tuyến núi phía Bắc)',
+    vehicleTypes: 'Xe 16 Chỗ & 29 Chỗ Bầu Hơi',
+    targetMarket: 'Khách Thái Lan, Hàn Quốc, Đài Loan, Khách Đoàn Sài Gòn',
+    image: '/images/destinations/sapa.jpg',
+    startingPrice: '19.000.000₫',
+    prices: [
+      { vehicle: 'Xe 16 chỗ', price: '19.000.000₫', rawPrice: 19000000, note: 'Ford Transit / Solati đời mới' },
+      { vehicle: 'Xe 29 chỗ', price: '25.000.000₫', rawPrice: 25000000, note: 'Thaco Meadow bầu hơi êm ái', isPopular: true },
+    ],
+    priceIncludes: 'Trọn gói xe 5N4Đ, xăng dầu, phí cao tốc, tài xế chuyên nghiệp thông thạo toàn bộ cung đường Đông & Tây Bắc.',
+    highlights: [
+      'Chinh phục Cột cờ Lũng Cú cực Bắc & cung đèo huyền thoại Mã Pí Lèng',
+      'Du thuyền trên Sông Nho Quế ngắm hẻm Tu Sản xanh ngọc bích',
+      'Check-in Bãi đá Mặt Trăng, Nhà của Pao Lũng Cẩm',
+      'Chinh phục Đỉnh Fansipan 3.143m - Nóc nhà Đông Dương',
+      'Trải nghiệm Cầu Kính Rồng Mây đỉnh đèo Ô Quy Hồ & Bản Cát Cát'
+    ],
+    itinerary: [
+      {
+        day: 'Ngày 1',
+        route: 'Hà Nội → Hà Giang (Nghỉ đêm Yên Minh)',
+        activities: [
+          'Khởi hành từ Hà Nội theo hướng Hà Giang',
+          'Dừng chân ăn trưa tại Bắc Quang',
+          'Check-in Cột mốc Km 0 Hà Giang',
+          'Chinh phục Dốc Bắc Sum uốn lượn',
+          'Ngắm cảnh sắc Núi đôi Cô Tiên Quản Bạ',
+          'Nghỉ đêm tại thị trấn Yên Minh'
+        ]
+      },
+      {
+        day: 'Ngày 2',
+        route: 'Yên Minh → Đồng Văn (Nghỉ đêm Đồng Văn)',
+        activities: [
+          'Sáng: Khởi hành từ Yên Minh đi Đồng Văn, check-in Dốc Thẩm Mã',
+          'Thăm quan Di tích Dinh thự Họ Vương',
+          'Chinh phục Cột cờ Lũng Cú & thăm bản Lô Lô Chải',
+          'Ăn trưa tại khu vực Cột cờ Lũng Cú',
+          'Chiều: Check-in Tượng đài Con Đường Hạnh Phúc',
+          'Chinh phục Đỉnh đèo Mã Pí Lèng',
+          'Đi thuyền trên Sông Nho Quế ngắm hẻm vực Tu Sản tuyệt mỹ',
+          'Nghỉ đêm tại trung tâm Đồng Văn'
+        ]
+      },
+      {
+        day: 'Ngày 3',
+        route: 'Đồng Văn → Sapa (Nghỉ đêm Sapa)',
+        activities: [
+          'Sáng: Check-in Bãi đá Mặt Trăng kỳ thú',
+          'Ghé thăm Nhà của Pao tại Làng văn hóa Lũng Cẩm',
+          'Ăn trưa tại Quản Bạ',
+          'Khởi hành hành trình liên tuyến vượt núi sang thị xã sương mù Sapa',
+          'Nhận phòng và nghỉ đêm tại trung tâm Sapa'
+        ]
+      },
+      {
+        day: 'Ngày 4',
+        route: 'Khám Phá Sapa - Fansipan - Cầu Kính Rồng Mây (Nghỉ đêm Sapa)',
+        activities: [
+          'Chinh phục Đỉnh Fansipan 3.143m - Nóc nhà Đông Dương bằng cáp treo Sun World',
+          'Trải nghiệm Cầu Kính Rồng Mây ngắm toàn cảnh đèo Ô Quy Hồ hùng vĩ',
+          'Buổi tối tự do dạo phố, ngắm nhà thờ đá, thưởng thức đồ nướng phố cổ Sapa',
+          'Nghỉ đêm tại Sapa'
+        ]
+      },
+      {
+        day: 'Ngày 5',
+        route: 'Sapa → Bản Cát Cát → Lào Cai → Hà Nội (Kết thúc chương trình)',
+        activities: [
+          'Thăm quan Bản Cát Cát, ngắm thác nước Tiên Sa mộng mơ',
+          'Dừng chân dùng bữa trưa tại TP. Lào Cai',
+          'Lên xe theo cao tốc Nội Bài - Lào Cai êm ái về Hà Nội, kết thúc chuyến đi'
+        ]
+      }
+    ]
+  }
+];
+
 export const popularRoutes = [
   {
     id: 'hanoi-city-noibai',
     title: 'Hà Nội City Tour & Đón Tiễn Sân Bay Nội Bài',
     duration: '1 Ngày hoặc Theo Chuyến',
     distance: 'Nội Bài 30km, City Tour linh hoạt',
-    vehicleTypes: '29 Chỗ & 45 Chỗ',
+    vehicleTypes: '16 Chỗ, 29 Chỗ & 45 Chỗ',
     targetMarket: 'Tất cả: Pháp, Nhật, Thái, Hàn, Đài Loan, Sài Gòn',
     image: '/images/destinations/hanoi.jpg',
     highlights: [
@@ -136,7 +451,7 @@ export const popularRoutes = [
     title: 'Hà Nội - Sapa - Đỉnh Fansipan Nóc Nhà Đông Dương',
     duration: '2 Ngày 1 Đêm hoặc 3 Ngày 2 Đêm',
     distance: 'Khoảng 315km (Cao tốc Nội Bài - Lào Cai êm ái)',
-    vehicleTypes: '29 Chỗ & 45 Chỗ (Bầu hơi chống say xe)',
+    vehicleTypes: '16 Chỗ, 29 Chỗ & 45 Chỗ (Bầu hơi)',
     targetMarket: 'Rất chuộng: Thái Lan, Hàn Quốc, Đài Loan, Khách Sài Gòn',
     image: '/images/destinations/sapa.jpg',
     highlights: [
@@ -151,7 +466,7 @@ export const popularRoutes = [
     title: 'Hà Nội - Ninh Bình (Tràng An - Bái Đính - Tam Cốc)',
     duration: '1 Ngày hoặc 2 Ngày 1 Đêm',
     distance: 'Khoảng 95km (Cao tốc Hà Nội - Ninh Bình chỉ 1.5h)',
-    vehicleTypes: '29 Chỗ & 45 Chỗ',
+    vehicleTypes: '16 Chỗ, 29 Chỗ & 45 Chỗ',
     targetMarket: 'Đặc biệt yêu thích: Khách Pháp, Thái Lan, Nhật Bản, Đài Loan',
     image: '/images/destinations/ninh-binh.jpg',
     highlights: [
@@ -166,7 +481,7 @@ export const popularRoutes = [
     title: 'Hà Nội - Vịnh Hạ Long - Cảng Tàu Quốc Tế',
     duration: '1 Ngày, 2 Ngày 1 Đêm hoặc 3 Ngày 2 Đêm',
     distance: 'Khoảng 160km (Cao tốc Hà Nội - Hải Phòng - Hạ Long chỉ 2h)',
-    vehicleTypes: '29 Chỗ & 45 Chỗ',
+    vehicleTypes: '16 Chỗ, 29 Chỗ & 45 Chỗ',
     targetMarket: 'Tất cả: Pháp, Nhật, Hàn, Thái, Đài Loan, Sài Gòn',
     image: '/images/destinations/ha-long.jpg',
     highlights: [
@@ -181,11 +496,11 @@ export const popularRoutes = [
     title: 'Hà Nội - Hà Giang - Cao Nguyên Đá Đồng Văn',
     duration: '3 Ngày 2 Đêm hoặc 4 Ngày 3 Đêm',
     distance: 'Khoảng 300km - 450km (Tuyên Quang - Hà Giang)',
-    vehicleTypes: 'Xe 29 Chỗ Chuyên Tuyến Vượt Đèo Núi',
+    vehicleTypes: 'Xe 16 Chỗ & 29 Chỗ Chuyên Tuyến Vượt Đèo',
     targetMarket: 'Khách Pháp, Đài Loan, Thái Lan, Khách Sài Gòn mê khám phá',
     image: '/images/destinations/ha-giang.jpg',
     highlights: [
-      'Xe 29 chỗ đời mới động cơ khỏe, chuyên trị cung đèo Hà Giang',
+      'Xe 16 & 29 chỗ đời mới động cơ khỏe, chuyên trị cung đèo Hà Giang',
       'Chinh phục đèo Mã Pí Lèng hiểm trở và hẻm vực Tu Sản - sông Nho Quế',
       'Check-in Cột cờ Lũng Cú cực Bắc Tổ quốc, phố cổ Đồng Văn',
       'Chiêm ngưỡng mùa hoa tam giác mạch và ruộng bậc thang Hoàng Su Phì',
@@ -196,7 +511,7 @@ export const popularRoutes = [
     title: 'Hà Nội - Cát Bà, Mai Châu, Mộc Châu, Cao Bằng',
     duration: '2 Ngày 1 Đêm - 3 Ngày 2 Đêm',
     distance: 'Theo yêu cầu từng hành trình tour',
-    vehicleTypes: '29 Chỗ & 45 Chỗ',
+    vehicleTypes: '16 Chỗ, 29 Chỗ & 45 Chỗ',
     targetMarket: 'Đoàn khách quốc tế Inbound & Tour lữ hành nội địa',
     image: '/images/destinations/cao-bang.jpg',
     highlights: [
@@ -223,7 +538,7 @@ export const b2bBenefits = [
   },
   {
     title: 'Xe 100% Đời Mới 2023 - 2026 Bầu Hơi',
-    desc: 'Toàn bộ xe 29 và 45 chỗ đều là dòng xe đời mới, hệ thống treo bầu hơi êm ái chống say xe trên cung đường đèo núi phía Bắc, máy lạnh thơm tho không mùi.',
+    desc: 'Toàn bộ xe 16, 29 và 45 chỗ đều là dòng xe đời mới, hệ thống treo bầu hơi êm ái chống say xe trên cung đường đèo núi phía Bắc, máy lạnh thơm tho không mùi.',
   },
   {
     title: 'Bảo Đảm Xe Thay Thế & Hỗ Trợ 24/7',
